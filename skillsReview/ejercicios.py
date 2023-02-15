@@ -1,27 +1,26 @@
 """ 
-ejercicio 4: 
-    Que son las expresiones regulares en Python?
+5. ejercicio
+ 
+Enumere 5 tipos de datos en Python y suministre un valor de
+ejemplo de cada uno.
 """
 
+print('tipos de datos en python\n')
+n1 = 40
+n2 = 99291817389127398173987321918236219836129
+n3 = 3.1416
+n4 = True
+cadena = 'Hello word'
+lista = [1,2,3,4] 
+tupla = ('uno','dos','tres')
 
-print('Las expresiones regulares son patrones utilizados para encontrar \nuna determinada combinación de caracteres dentro de una cadena de texto. \nLas expresiones regulares proporcionan una manera muy \nflexible de buscar o reconocer cadenas de texto.')
-print('\ndentro de Python a través del módulo re. Usando este pequeño lenguaje, \nespecificas las reglas para el conjunto de cadenas de caracteres posibles que deseas hacer coincidir;\nejemplo:\n')
-
-import re
-
-regex = re.compile('a[3-5]+') 
-print(regex,' : # coincide con una letra, seguida de al menos 1 dígito entre 3 y 5')
-
-cadena = 'a4123'
-print('\ndato a verificar: ' ,cadena)
-print(regex.match(cadena))
-print(regex.search(cadena))
-
-cadena2 = 'a7345'
-print('\ndato a verificar: ',cadena2) 
-print(regex.match(cadena2))
-print(regex.search(cadena2))
-
+print(f'dato entero = {n1} ',type(n1))
+print(f'dato entero largo = {n2}', type(n2))
+print(f'dato decimal = {n3}',type(n3))
+print(f'dato booleano = {n4}', type(n4))
+print(f'dato cadena o String = {cadena}', type(cadena))
+print(f'dato de tipo Array  = {lista}', type(lista))
+print(f'dato de tipo tupla  = {tupla}', type(tupla))
 
 
 
