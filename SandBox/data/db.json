@@ -1,0 +1,103 @@
+{
+
+    "header":[
+
+        {"namepage":"AULAIDEAL.COM"},
+
+        {
+            "items":{
+                "menu1":{
+                    "href":"#about",
+                    "item":"MIGUEL"
+                },
+                "menu2":{
+                    "href":"#service",
+                    "item":"SERVICIOS"
+                },
+
+                "menu3":{
+                    "href":"#proyectos",
+                    "item":"PORTAFOLIO"
+                },
+                "menu4":{
+                    "href":"#contacto",
+                    "item":"CONTACTO"
+                },
+                "menu5":{
+                    "href":"#contacto",
+                    "item":"CONTACTO"
+                }
+                
+            }
+        },
+        {
+            "textimage":{
+                "p":"Bienvenidos a nuestro estudio",
+                "h2":"ENCANTADOS DE CONOCERTE",
+                "btn":"PONTE EN CONTACTO"
+            }
+        }
+
+    ],
+
+    "seccion1":[
+        {   
+            "about":{
+                "image":"img/nosotros.svg",
+                "h2":"¿QUIENES SOMOS?",
+                "p":"Ponemos a tu alcance un servicio adaptado a tus necesidades, desde una consultoría integrla con super-visión de todos y cada uno de los pasos que has de seguir para crear un negocio actual (comunicación, diseño corporativo, tecnologías...) a productos adaptados a metodologías ágiles de creacción de apps diseñadas por nosotros y avaladas por nuestros años de experiencia.",
+                "btn":"MAS INFORMACIÓN"
+            }
+        }
+    ],
+
+
+    "seccion2":[
+        {"h2":"NUESTROS SERVICIOS"},
+        
+        {
+            "cards":{
+
+                "content1":{
+                    "icon":"<i class='fa-solid fa-briefcase check' ></i>",
+                    "title":"Aplicaciones para la nube",
+                    "p":"Para empresa que requiera ampliar sus plataformas de gestión."
+                },
+                "content2":{
+                    "icon":"<i class='fa-solid fa-bullhorn check'></i>",
+                    "title":"Fabrica de software",
+                    "p":"Servicios de mejora correctiva y evolutiva para sus aplicaciones."
+                },
+                "content3":{
+                    "icon":"<i class='fa-solid fa-check-to-slot check'></i>",
+                    "title":"Diseño personalizado",
+                    "p":"Customiza hasta el ultimo pixel de tu App. Infinitas Posibilidades."
+                    }
+            }
+        }   
+    ],
+
+    "seccion3":[
+            {
+                "h2p":"ULTIMOS PROYECTOS"
+            },
+            {
+                "content":{
+                    
+                    "row1":[
+                        "img/proyecto1.svg",
+                        "img/proyecto2.svg",
+                        "img/proyecto3.svg"
+                    ],     
+                    
+                    "row2":[
+                        "img/proyecto4.svg",
+                        "img/proyecto5.svg",
+                        "img/proyecto6.svg"
+                    ]   
+                }
+        }
+    ],
+
+    "pie":["2016 © NETWORK Todos los derechos reservados"]
+}

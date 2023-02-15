@@ -1,0 +1,505 @@
+@font-face {
+    font-family: "fontawesome-webfont";
+    src: url(fonts/fontawesome-webfont.ttf);
+}
+
+@font-face {
+    font-family: "opensans-regular-webfont";
+    src: url(fonts/opensans-regular-webfont.ttf);
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "opensans-regular-webfont";
+}
+
+/* 
+    header, banner , navbar
+*/
+.contenedor{
+    background-image: url(img/fondo-bienvenido-grande.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+
+.barra{
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.xx{
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+
+
+ul{
+    list-style: none;
+}
+
+.items,li{
+    font-weight: bold;
+    display: inline;
+    padding: 3px;
+    padding-right: 3px;
+    margin-top: auto;
+    margin-bottom: auto;
+} 
+
+.items2,li{
+    font-weight: bold;
+    display: inline;
+}
+.names{
+   font-weight: bold;
+   margin-top: auto;
+   margin-bottom: auto;
+   font-size: 35px;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+   color: white;
+
+}
+.names:link, .names:visited{
+    text-decoration: none !important;
+    color: white;
+}
+
+.secc1{
+    width: 40%;
+    display: flex;
+    padding-left: 200px;
+    font-weight: bold;
+    color: white; 
+}
+
+.secc2{
+    width: 60%;
+    display: flex;
+    justify-content: left;
+    padding-left: 100px;
+} 
+
+.secc3{
+    display: none;
+}
+
+.menuBar{
+    font-size: 40px;
+    color: white;
+}
+
+
+.menuBar:hover{
+    color: rgb(240, 95, 64);
+    font-size: 42px;
+}
+
+
+.lis{
+    font-size: 21px;
+    font-weight: 100;
+    color: white;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.lis:hover{
+    background-color: rgb(240, 95, 64);
+}
+
+.links:link,.links:visited{
+    text-decoration: none;
+}
+
+.parrafo:hover{
+    background-color: aqua;
+    color: blueviolet;
+}
+
+.padre{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hijo{
+    margin-bottom: 150px;
+}
+.welcome{
+    font-size: 25px;
+}
+.welcome_{
+    font-size: 75px;
+
+}
+
+.boton1{
+    background-color: rgb(240, 95, 64);
+    color: white;
+    height: 60px;    
+}
+.boton1:hover{
+    border: 1px solid white;
+
+}
+
+
+
+/* section infos */
+
+.logo{
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}   
+
+.imgLog{
+    width: 20%;
+    border-radius: 50%;
+    margin-bottom: 5%;
+}
+
+.infos{
+    min-height: 650px;
+    background-color: rgb(240, 95, 64);
+    color: white;
+}
+
+.description{
+    text-align: center;
+    
+}
+
+.title2{
+    font-size: 50px;
+
+}
+.parrafo2{
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+.masInfo:hover{
+    padding: auto;
+    color: rgb(240, 95, 64);
+}
+
+
+
+
+/* 
+nuestros servicios
+*/
+
+.services>*{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.service{
+    display: flex;
+}
+
+
+.extra{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    justify-content: center;
+    padding: 30px 0px 40px 0px;
+}
+
+.card{
+    border: 0px;
+    margin: 30px;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+}
+
+.check{
+    color: rgb(240, 95, 64);
+    font-size: 90px;
+    padding-bottom: 35PX;
+}
+
+.carT{
+    color: black;
+    font-size: 25px;
+}
+
+.cardp{
+    font-size: 18px;
+}
+
+.proyectos{
+    background-color: #444444;
+    padding-bottom: 5%;
+}
+
+.ext{
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.col{
+    justify-content: center;
+    margin: auto;
+    
+}
+
+
+.serviC{
+    padding-bottom: 2%;
+}
+
+.proyect{
+    margin-top: 3%;
+}
+
+.pie{
+    min-height: 100px;
+    background-color: rgb(40,36,36);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#piee{
+    font-size: 18px;
+}
+
+
+.nuevo-menu{
+    height: 100px;
+    width: 100%;
+    display: none;
+    justify-content: end;
+}
+
+.itemsss{
+    width: 100%;
+    margin-left: 0%;   
+}
+
+
+
+.imgRound{
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 90%;
+    object-fit: cover;
+}
+.imgRound:hover{
+    border-radius: 50px;
+}
+
+
+
+
+
+@media(max-width: 1380px){
+    
+    .secc2{
+        display: none;
+    }
+    .secc3{
+        display: flex;
+        width: 60%;
+        justify-content: right;
+        padding-right: 100px;
+        padding-left: 100px;
+    }
+
+    .nuevo-menu{
+        display: inline;
+    }
+    .proyect{
+        display: flex;
+        justify-content: center;
+    }
+    
+}
+
+
+@media(max-width: 1200px){
+    .secc1{
+        padding-left: 5% !important;
+    }
+    .proyect{
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+@media(max-width: 1000px){
+    .secc1{
+        padding-left: 5% !important;
+    }
+
+    .imgLog{
+        width: 30% !important;
+    }
+
+    .imgRound{
+        width: 90%;
+    }
+    .proyect{
+        display: flex;
+        justify-content: center;
+    }
+    .infos{
+        padding-bottom: 7%;
+    }
+    
+}
+
+
+
+/* medias query */
+@media (max-width: 900px){
+    .secc1{
+        padding-left: 5% !important;
+    }
+    .names{
+        font-size: 35px;
+    }
+    .secc2{
+        padding-right: 5%;
+    }
+
+    #piee{
+        font-size: 20px !important;
+    }
+    .welcome_{
+        font-size: 70px;
+    }
+    .menuBar{
+        font-size: 35px;
+    }
+    .imgLog{
+        width: 30% !important;
+    }
+
+    .proyect{
+        display: flex;
+        justify-content: center;
+    }
+    .imgRound{
+        width: 70%;
+    }
+
+    .infos{
+        padding-bottom: 7%;
+    }
+
+}
+
+@media (max-width: 600px){
+
+    .menuBar{
+        font-size: 32px;
+        margin: auto;
+        padding: auto;
+    }
+
+
+    .contenedor{
+        background-image: url(img/fondo-bienvenidos.jpg);
+    }
+
+    #piee{
+        font-size: 16px !important;
+    }
+
+    .secc1{
+        padding-left: 5%;
+    }
+
+    .secc3{
+        padding-right: 5%;
+    }
+    .names{
+        font-size: 25px;
+    }
+    .title2{
+        font-size: 30px !important;
+    }
+    
+    .parrafo2{
+        font-size: 20px !important;
+        margin: auto !important;
+    }
+
+    .boton, .boton1{
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .imgLog{
+        width: 30% !important;
+    }
+
+    .welcome{
+        font-size: 18px;
+    }
+
+    .welcome_{
+        font-size: 45px;
+        padding-bottom: 2rem;
+    }
+
+    .proyect{
+        display: flex;
+        justify-content: center;
+    }
+    .imgRound{
+        width: 50%;
+    }
+
+}
+
+@media(max-width: 385px){
+    .secc1{
+        padding-left: 5% !important;
+    }
+
+    .imgRound{
+        width: 60%;
+    }
+
+    .proyect{
+        display: flex;
+        justify-content: center;
+    }
+    .infos{
+        padding-bottom: 7%;
+    }
+}
