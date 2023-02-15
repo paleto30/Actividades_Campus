@@ -1,31 +1,44 @@
+
 """ 
-Ejercicio 7
+Ejercicio 8..
 
-Cuál es la diferencia entre un condicional simple y un
-condicional compuesto?
+Escriba un bloque cualquiera de código en Python en donde
+utilice 2 condicionales (if) anidados. 
 """
+import os
+
+os.system('clear')
+print('--------------UNIX SISTEM--------------\n')
 
 
-print('La diferencia entre un condicional simple y uno compuesto es:\n')
-print('el simple solo tiene una opcion, se cumple esa condicion y sucede algo o no pasa nada\n ejemplo')
-
-n1,n2 = 2,20
-mensaje = ''
-if n2 % n1 == 0 :
-    mensaje = 'se cumple'
-print(f'teniendo:\nnum1 = {n1}\nnum2= {n2}\n')
-print(f'si {n2} modulador {n1} == 0 .   mensaje = {mensaje}')
-
-print('-----------------------------------------------------------------------------\n')
-print('Cuando tenemos un condicional compuesto, hay varias opciones \nque pueden cumplirse y cada una de ellas si se cumple ejecuta\nuna serie de opciones especificas.')
-print('\npor ejemplo:\n')
+dic = {'user':'paleto','password':'admin123','age':'23','phone':'312312'}
+user = str(input('UserName: '))
+password = str(input('PassWord: '))
 
 
-if n2 % n1 == 0:
-    mensaje = 'EL numero es par'
+if dic['user'] == user:
+    if dic['password'] == password:
+
+        os.system('clear')
+        print('--------------UNIX SISTEM--------------\n')
+        print('     Welcome the system\n')
+
+        opcion = str(input('[1] watch user active.\n[2] watch info user\n[3] exit\n >'))
+
+        if opcion == '1':
+            os.system('clear')
+            print('--------------UNIX SISTEM--------------\n')
+            print(f'User active is :\n   {dic["user"]}')
+        elif opcion == '2':
+            os.system('clear')
+            print('--------------UNIX SISTEM--------------\n')
+            print(f'User info :\n\nuser: {dic["user"]}\nage: {dic["age"]}\nphone: {dic["phone"]}')
+        elif opcion == '3':
+            os.system('clear')
+            print('log out')
+
+    else:
+        print('the password is incorrect!')
+
 else:
-    mensaje = 'El mumero es impar' 
-
-
-print(f'teniendo:\nnum1 = {n1}\nnum2= {n2}\n')
-print(f'si {n2} modulador {n1} == 0 .   mensaje = {mensaje}') 
+    print('the username is incorrect!')
