@@ -1,44 +1,58 @@
-
 """ 
-Ejercicio 8..
+Ejercicio 9. 
 
-Escriba un bloque cualquiera de código en Python en donde
-utilice 2 condicionales (if) anidados. 
+Construya un algoritmo en Python, que permita ingresar la
+información de un empleado e imprima el nombre, los
+apellidos y la antigüedad. Los datos que se deben solicitar
+son los siguientes:
+*Nombre * Teléfono *Año de ingreso a la empresa
+*Apellidos *Edad. 
 """
+
+
 import os
 
-os.system('clear')
-print('--------------UNIX SISTEM--------------\n')
+""" funciones =================================================== """
+def datosEmpleado():
+    dicc = {}
+    dicc['nombre']=str(input('Ingrese el nombre:\n--:'))
+    dicc['apellido']=str(input('Ingrese el apellido:\n--:'))
+    dicc['edad']=str(input('Ingrese la edad:\n--:'))
+    dicc['telefono']=str(input('Ingrese el telefono:\n--:'))
+    dicc['anio']=str(input('Ingrese año de ingreso:\n--:'))
+    empleados.append(dicc)
 
 
-dic = {'user':'paleto','password':'admin123','age':'23','phone':'312312'}
-user = str(input('UserName: '))
-password = str(input('PassWord: '))
+def imprimirEpleados():
+    count = 0
+    for i in empleados:
+        print(f'--------------------------------\nempleado {count+1}\n--------------------------------\nnombre: {i["nombre"]}\napellidos: {i["apellido"]}\naños Antiguedad: { 2023 - int(i["anio"])}\n')
+        count += 1
+
+""" ============================================================= """
 
 
-if dic['user'] == user:
-    if dic['password'] == password:
+empleados = []
 
+
+flag = True
+while flag == True:
+
+    print('-----------------Mennu-----------------\n')
+    print('[1] Registrar un empleado')
+    print('[2] Listar empleados')
+    print('[3] salir') 
+    opc = int(input('\n--:'))   
+
+    if opc == 1:
         os.system('clear')
-        print('--------------UNIX SISTEM--------------\n')
-        print('     Welcome the system\n')
-
-        opcion = str(input('[1] watch user active.\n[2] watch info user\n[3] exit\n >'))
-
-        if opcion == '1':
-            os.system('clear')
-            print('--------------UNIX SISTEM--------------\n')
-            print(f'User active is :\n   {dic["user"]}')
-        elif opcion == '2':
-            os.system('clear')
-            print('--------------UNIX SISTEM--------------\n')
-            print(f'User info :\n\nuser: {dic["user"]}\nage: {dic["age"]}\nphone: {dic["phone"]}')
-        elif opcion == '3':
-            os.system('clear')
-            print('log out')
-
+        print('-----------------Registrar-----------------\n')
+        datosEmpleado()
+    elif opc == 2:
+        os.system('clear')
+        print('-----------------Listado-----------------\n')
+        imprimirEpleados()
+    elif opc == 3:
+        flag = False
     else:
-        print('the password is incorrect!')
-
-else:
-    print('the username is incorrect!')
+        print('opcion invalida')
