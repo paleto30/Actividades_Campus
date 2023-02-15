@@ -1,58 +1,60 @@
 """ 
-Ejercicio 9. 
+Ejercicio 10. 
 
-Construya un algoritmo en Python, que permita ingresar la
-información de un empleado e imprima el nombre, los
-apellidos y la antigüedad. Los datos que se deben solicitar
-son los siguientes:
-*Nombre * Teléfono *Año de ingreso a la empresa
-*Apellidos *Edad. 
+En su casa le solicitan que realice un algoritmo en Python,
+que permita calcular el valor a pagar por concepto de
+energía eléctrica. Los datos que se conocen son los
+siguientes:
+- Mes de consumo - Valor kw
+-Total kw consumido en el mes - estrato
 """
 
-
+""" valor de kw por estrato """
 import os
 
-""" funciones =================================================== """
-def datosEmpleado():
-    dicc = {}
-    dicc['nombre']=str(input('Ingrese el nombre:\n--:'))
-    dicc['apellido']=str(input('Ingrese el apellido:\n--:'))
-    dicc['edad']=str(input('Ingrese la edad:\n--:'))
-    dicc['telefono']=str(input('Ingrese el telefono:\n--:'))
-    dicc['anio']=str(input('Ingrese año de ingreso:\n--:'))
-    empleados.append(dicc)
+vlKwEs1 = 233.58
+vlKwEs2 = 291.98
+vlKwEs3 = 496.37
+vlKwEs4 = 583.97
+vlKwEs5y6 = 700.76 
 
+def calcuarVlrTotal(estrato,totalKw):
+    vlrTotal = 0 
 
-def imprimirEpleados():
-    count = 0
-    for i in empleados:
-        print(f'--------------------------------\nempleado {count+1}\n--------------------------------\nnombre: {i["nombre"]}\napellidos: {i["apellido"]}\naños Antiguedad: { 2023 - int(i["anio"])}\n')
-        count += 1
-
-""" ============================================================= """
-
-
-empleados = []
+    if estrato == 1:
+        vlrTotal = totalKw * vlKwEs1
+    elif estrato == 2:
+        vlrTotal = totalKw * vlKwEs2
+    elif estrato == 3:
+        vlrTotal = totalKw * vlKwEs3
+    elif estrato == 4:
+        vlrTotal = totalKw * vlKwEs4
+    elif estrato == 5 or estrato == 6:
+        vlrTotal = totalKw * vlKwEs5y6
+    
+    return vlrTotal
 
 
 flag = True
 while flag == True:
 
-    print('-----------------Mennu-----------------\n')
-    print('[1] Registrar un empleado')
-    print('[2] Listar empleados')
-    print('[3] salir') 
-    opc = int(input('\n--:'))   
+    print('[1] calcular el valor del recibo energetico\n[2] salir')
+    opc = int(input('--: '))
 
     if opc == 1:
         os.system('clear')
-        print('-----------------Registrar-----------------\n')
-        datosEmpleado()
-    elif opc == 2:
+        print('\neste programa calcula el valor a pagar \npor el consumo de energia electrica\n')
+        print('segun el estrato social:\nestrato 1\nestrato 2\nestrato 3\nestrato 4\nestrato 5 y 6\n')
+        estrato = int(input('Ingrese el estrato: '))
+        mes = str(input('Mes de consumo: '))
+        totalKw = int(input('Kw consumidos en el mes: '))
         os.system('clear')
-        print('-----------------Listado-----------------\n')
-        imprimirEpleados()
-    elif opc == 3:
+        totalPagar = calcuarVlrTotal(estrato,totalKw)
+        print(f'\n\nMes: {mes}\nKw consumidos en el mes: {totalKw}\nEl valor Total a pagar es de : ${totalPagar}')
+        print('\n\n')
+    elif opc == 2:
+
         flag = False
+    
     else:
-        print('opcion invalida')
+        print('la opcion que ingrso es invalida !!...')
