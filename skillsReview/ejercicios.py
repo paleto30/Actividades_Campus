@@ -1,21 +1,31 @@
 """ 
-Ejercicio 6. 
+Ejercicio 7
 
-En sus propias palabras, qué son las funciones
-preconstruidas y proporcione 2 ejemplos.
+Cuál es la diferencia entre un condicional simple y un
+condicional compuesto?
 """
 
 
-print('¿En sus propias palabras, qué son las funciones\npreconstruidas y proporcione 2 ejemplos.?\n')
-print('rta:  estas funciones son las que  ya vienen incluidas en python \ny tenemos muchas funciones preconstruidas')
-print('por ejemplo: funcion max , funcion min\nnos sirven para encontrar el maximo valor y el minimo valor.')
-lista = [1,5,4,2,6,7,32,3]
-print(f'\ntenemos la siguiente lista de datos: {lista}')
-print('y yo quiero saber cual es mayor numero que hay en la lista rapidamente.\nentonces uso la funcion preconstruida de python max() de la siguiente manera')
-print(f'max(lista) esto retorna = {max(lista)}\n')
-print(f'min(lista) esto retorna = {min(lista)}\n')
+print('La diferencia entre un condicional simple y uno compuesto es:\n')
+print('el simple solo tiene una opcion, se cumple esa condicion y sucede algo o no pasa nada\n ejemplo')
+
+n1,n2 = 2,20
+mensaje = ''
+if n2 % n1 == 0 :
+    mensaje = 'se cumple'
+print(f'teniendo:\nnum1 = {n1}\nnum2= {n2}\n')
+print(f'si {n2} modulador {n1} == 0 .   mensaje = {mensaje}')
+
+print('-----------------------------------------------------------------------------\n')
+print('Cuando tenemos un condicional compuesto, hay varias opciones \nque pueden cumplirse y cada una de ellas si se cumple ejecuta\nuna serie de opciones especificas.')
+print('\npor ejemplo:\n')
 
 
+if n2 % n1 == 0:
+    mensaje = 'EL numero es par'
+else:
+    mensaje = 'El mumero es impar' 
 
 
-
+print(f'teniendo:\nnum1 = {n1}\nnum2= {n2}\n')
+print(f'si {n2} modulador {n1} == 0 .   mensaje = {mensaje}') 
