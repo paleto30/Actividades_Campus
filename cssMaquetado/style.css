@@ -1,0 +1,163 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+.contenedor{
+    width: 100%;
+    background-image: url('wallpaperflare.com_wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.head{
+    width: 100%;
+    height: 100px;
+    background:rgba(0, 0, 0,0.6);
+    position: sticky;
+}
+
+
+.left{
+    float: left;
+    height: 100px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.burger{
+    display: none;
+}
+.logo{
+    color: rgb(212, 105, 17);
+}
+.logo:hover{
+    color: white;
+}
+.right{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu{
+    width: 80%;
+    display: flex;
+    justify-content: end;
+}
+
+.lista{
+    list-style: none;    
+    display:flex;
+}
+
+.items{
+    background:rgba(0, 0, 0,0.9);
+    padding: 15px 25px;
+    color:rgb(212, 105, 17) ;
+    font-size: 18px;
+    font-weight: 700;
+    border: 0.1px solid rgba(0, 0, 0,0.3); 
+}
+.items:hover{
+    background:rgba(0, 0, 0, 0.0);
+    border: 0.1px solid white;
+    color:white
+}
+a:link{
+    text-decoration: none;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height:calc(100vh - 100px)
+}
+
+.texto{
+    width: 50%;
+    text-align: center;
+    background-color: rgba(0, 0, 0,0.4);
+    padding: 30px;
+}
+.txt{
+    text-align: justify;
+    
+}
+
+.btn{
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn:hover{
+    background-color: white;
+    color: black;
+}
+
+nav{
+    width: 100%;
+}
+
+.menuoculto{
+    /* background-color: aqua; */
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.menus{
+    color: white; 
+    font-size: 45px;
+}
+.menus:hover{
+    color: rgb(212, 105, 17);
+}
+
+
+
+@media(max-width: 1000px){
+
+    .content{
+        height: 100vh;
+    }
+    .menu{
+        display: none;
+    }
+    .head{
+        position: fixed;
+    }
+    .burger{
+        display: flex;
+    }
+    .right{
+        justify-content: end;
+        padding-right: 10%; 
+    }
+    .toggle-btn:checked + .menuoculto{
+        display: flex;
+        position: static;
+    }
+    .texto{
+        width: 85%;
+        margin-top: 40%;
+    }
+    
+}
