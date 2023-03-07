@@ -1,10 +1,10 @@
 const data = {
-    uno:{note:4.0,text:'Exceeds proficiency'},
-    dos:{note:3.0,text:'Demonstrates proficiency'},
-    tres:{note:2.0,text:'Approaches proficiency'},
-    cuatro:{note:1.0,text:"Falls well bellow proficiency"},
-    cinco:{note:0.0,text:'Lacks all proficiency'},
-    seis:{note:0.0,text:"No attempt made"},
+    uno:{note:4.0,text:'Exceeds proficiency',mtv:'manterse asi te dara una beca'},
+    dos:{note:3.0,text:'Demonstrates proficiency',mtv:'sigue asi, obtendras buenas recompensas'},
+    tres:{note:2.0,text:'Approaches proficiency',mtv:'trata de mejorar tu rendimiento'},
+    cuatro:{note:1.0,text:"Falls well bellow proficiency",mtv:'debes esforzarte mas, tu puedes'},
+    cinco:{note:0.0,text:'Lacks all proficiency',mtv:'no te estas esforzando, tienes que mejorar'},
+    seis:{note:0.0,text:"No attempt made",mtv:'estas PFC'},
     error:{ msg:"La nota que ingreso es incorrecta, revise !"}
 }
 
@@ -74,14 +74,18 @@ function  enviarDatos() {
         if (!calificacion.msg) {
             alert.innerHTML = `
             <div class="alert alert-info" role="alert" >
-                <h3>SBG Rating:<spam style="color: black">${calificacion.note}</spam> <br>Proficiency Level with Standard: <spam style="color: black">${calificacion.text}</spam>  </h3>;
+                <h3>SBG Rating:<spam style="color: black">${calificacion.note}</spam> <br>
+                Proficiency Level with Standard: <spam style="color: black">${calificacion.text}</spam><br>
+                Consejo: <spam style="color: black">${calificacion.mtv}</spam>
+                </h3>
             </div>
             `;
         }else{
             alert.innerHTML = `
             <div class="alert alert-warning" role="alert" >
-                <h3>¡Advertencia!<br>${calificacion.msg}</h3>;
+                <h3>¡Advertencia!<br>${calificacion.msg}</h3>
             </div>
             `;
         }
 }
+
