@@ -1,14 +1,13 @@
 /* 
-    metodo .codePointAt()
+    metodo .concat()
 */
 
 
 let cadena = "Andrea";
-let cadena1 = cadena.toLowerCase();
-console.log(`cadena:${cadena} codePointAt: ${cadena.codePointAt(0)}`);
-console.log(`cadena:${cadena1} codePointAt: ${cadena1.codePointAt(0)}`);
+let cadenaC = cadena.concat(' como te encuentras?')
+console.log(`cadena:${cadena}`);
+console.log(`cadena:${cadenaC}`);
 
 /*  
-   El método codePointAt() devuelve un entero no negativo que equivale al valor Unicode code point del carácter.
-   Índice del carácter en la cadena del que se quiere obtener el valor del Unicode code point.
+   El método concat() combina dos o más cadenas de texto y devuelve una cadena de texto nueva.
 */
