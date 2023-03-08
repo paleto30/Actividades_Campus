@@ -1,16 +1,15 @@
 /* 
-    metodo substring()
+    metodo repeat()
 */
 
-let cadena = "Esto es una cadena y yo voy a sacar una sub cadena de este texto usando el metodo substring";
+let cadena = "Esto es una cadena ";
 
-console.log(cadena.substring(30, 91));
+console.log(cadena.repeat(1));
+console.log(cadena.repeat(3));
 
 /*  
-    como vemos el metodo nos extrae la cadena dentro del rango de el caracter
-    30 hasta el 91:
-
-    sub-cadena= sacar una sub cadena de este texto usando el metodo substring
+    este metodo nos permite repetir la cantidad de veces que le enviamos por parametro
+    de una cadena de texto 
 */
 
 
