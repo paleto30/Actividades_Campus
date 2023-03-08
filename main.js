@@ -1,15 +1,15 @@
 /* 
-    metodo .charAt()
+    metodo .charCodeAt()
 */
 
 
-let cadena = "Esto es una cadena, con algunos caracteres para contar por medio del metodo length ";
-
-console.log(cadena.charAt());
-console.log(cadena.charAt(12));
+let cadena = "Andrea";
+let cadena1 = cadena.toLowerCase();
+console.log(`cadena:${cadena} codigo-char: ${cadena.charCodeAt(0)}`);
+console.log(`cadena:${cadena1} codigo-char: ${cadena1.charCodeAt(0)}`);
 
 /*  
-    El método charAt() de String devuelve en un nuevo String el carácter UTF-16 de una cadena.
-    Un entero entre 0 y 1 menos que la longitud de la cadena. Si no se proporciona ningún indice charAt() utilizará 0.
+    El charCodeAt() método devuelve un número indicando el valor Unicode del carácter en el índice proporcionado.
+    Un entero entre 0 y 1 menos que la longitud de la cadena; si no se especifica, su valor predeterminado es 0.
 */
 
