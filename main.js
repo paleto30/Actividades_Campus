@@ -1,15 +1,12 @@
 /* 
-    metodo repeat()
+    metodo .length
 */
 
-let cadena = "Esto es una cadena ";
 
-console.log(cadena.repeat(1));
-console.log(cadena.repeat(3));
+let cadena = "Esto es una cadena, con algunos caracteres para contar por medio del metodo length ";
+console.log(`la cadena tiene: ${cadena.length} caracteres`);
 
 /*  
-    este metodo nos permite repetir la cantidad de veces que le enviamos por parametro
-    de una cadena de texto 
+    la propiedad .length , nos devuelve la cantidad de caracteres que posee una cadena de texto 
 */
-
 
