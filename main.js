@@ -1,13 +1,17 @@
 /* 
-    metodo .concat()
+    metodo .indexOf()
 */
 
 
-let cadena = "Andrea";
-let cadenaC = cadena.concat(' como te encuentras?')
-console.log(`cadena:${cadena}`);
-console.log(`cadena:${cadenaC}`);
+let cadena = "Soy un camper de campus ";
+console.log(cadena.indexOf('de',5));
 
 /*  
-   El método concat() combina dos o más cadenas de texto y devuelve una cadena de texto nueva.
+   El método indexOf() devuelve el índice, dentro del objeto 
+   String que realiza la llamada, de la primera ocurrencia 
+   del valor especificado, comenzando la búsqueda desde 
+   indiceDesde; o -1 si no se encuentra dicho valor.
+
+   sintaxis: 
+        cadena.indexOf(valorBusqueda[, indiceDesde])
 */
