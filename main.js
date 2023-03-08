@@ -1,14 +1,10 @@
-/*  
-    metodo replace()
+/* 
+    metodo replaceAll()
 */
-
-let cadena = "Esto es una cadena con comillas dobles y solo remplaza la primera sub-cadena que encuentra"
-console.log(cadena.replace('cadena','String'));
-
+let cadena = 'Esto es una cadena y remplaza todas las cadenas que encuentre en la cadena. ejemplo : cadena'
+console.log(cadena.replaceAll('cadena', 'string'));
 
 /* 
-    este metodo nos permite remplazar una subcadena por la palabra que queramos
-    pero si dentro de la cadena hay dos o mas palabras igual , solo remplaza ç
-    la primera que encuentra , inicia la busqueda de izquierda a derecha
+    al correr este programa nos damos cuenta que remplaza todas las subcadenas
+    que coincidan con la palabra que se le indica en el primer parametro 
 */
-
