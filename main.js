@@ -1,19 +1,18 @@
 /* 
-    metodo .toLowerCase() y 
-    metodo .toUpperCase()
+    metodo .trim()
 */
 
-let lower = 'ANDRES FELIPE GALVIS PEREIRA';
-let upper = 'esto es texto en minusculas';
+let cadena = '      espacios      ';
 
-console.log(`Convertir de Mayuscula a minuscula:\n${lower.toLowerCase()}\n`);
-console.log(`Convertir de Minuscula a Mayuscula:\n${upper.toUpperCase()}`);
+console.log(`sin trim: ${cadena}\n`);
+
+console.log(`trim:${cadena.trim()}\n`);
+
 
 /*  
-    -El método toLowerCase() devuelve el valor en 
-     minúsculas de la cadena que realiza la llamada.
-
-
-    -El toUpperCase() método devuelve el valor convertido 
-     en mayúsculas de la cadena que realiza la llamada.
+    El método trim( ) elimina los espacios en blanco 
+    en ambos extremos del string. Los espacios en 
+    blanco en este contexto, son todos los caracteres 
+    sin contenido (espacio, tabulación, etc.) y todos 
+    los caracteres de nuevas lineas (LF,CR,etc.).
 */
