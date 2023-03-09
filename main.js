@@ -1,20 +1,22 @@
 /* 
-    metodo .matchAll()
+    metodo .split()
 */
 
-const regexp = /t(e)(st(\d?))/g;
-const str = 'test1test2';
+let cadena  = "esto es una cadena y se le va a aplicar el metodo split"
 
-const array = [...str.matchAll(regexp)];
+let newCadena = cadena.split(" ", cadena.length)
 
-console.log(array[0]);
-console.log(array[1]);
+console.log("cadena inicial: ", cadena);
 
+console.log("resultado: ",newCadena);
 
+let cadenaInvertida = "anita lava la tina".split('').reverse().join('')
+
+console.log(cadenaInvertida);
 /*  
-    El método matchAll() retorna un iterador de todos los
-    resultados de ocurrencia en una cadena de texto contra 
-    una expresión regular, incluyendo grupos de captura.
+    El método split() 
+    divide un objeto de tipo String en un array (vector) 
+    de cadenas mediante la separación de la cadena en subcadenas.
 
-    cadena.matchAll(expresionRegular)
+    cadena.split([separador][,limite])
 */
