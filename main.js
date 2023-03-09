@@ -1,22 +1,19 @@
 /* 
-    metodo .split()
+    metodo .toLowerCase() y 
+    metodo .toUpperCase()
 */
 
-let cadena  = "esto es una cadena y se le va a aplicar el metodo split"
+let lower = 'ANDRES FELIPE GALVIS PEREIRA';
+let upper = 'esto es texto en minusculas';
 
-let newCadena = cadena.split(" ", cadena.length)
+console.log(`Convertir de Mayuscula a minuscula:\n${lower.toLowerCase()}\n`);
+console.log(`Convertir de Minuscula a Mayuscula:\n${upper.toUpperCase()}`);
 
-console.log("cadena inicial: ", cadena);
-
-console.log("resultado: ",newCadena);
-
-let cadenaInvertida = "anita lava la tina".split('').reverse().join('')
-
-console.log(cadenaInvertida);
 /*  
-    El método split() 
-    divide un objeto de tipo String en un array (vector) 
-    de cadenas mediante la separación de la cadena en subcadenas.
+    -El método toLowerCase() devuelve el valor en 
+     minúsculas de la cadena que realiza la llamada.
 
-    cadena.split([separador][,limite])
+
+    -El toUpperCase() método devuelve el valor convertido 
+     en mayúsculas de la cadena que realiza la llamada.
 */
