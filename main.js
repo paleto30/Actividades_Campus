@@ -1,16 +1,20 @@
 /* 
     propiedades y metodos NUMBER
 */
-//  Metodo .isFinite()
+//  Metodo .isInteger()
 
-console.log(Number.isFinite(1 / 0));
+function fits(x, y) {
+    if (Number.isInteger(y / x)) {
+      return 'Fits!';
+    }
+    return 'Does NOT fit!';
+  }
+  
+  console.log(fits(5, 10));
 
-console.log(Number.isFinite(10 / 5));
-
-console.log(Number.isFinite(0 / 0));
-
+  console.log(fits(5, 11));
 
 /* 
-El método estático Number.isFinite() 
-determina si el valor pasado es un número finito.
+El método estático Number.isInteger() 
+determina si el valor pasado es un número entero.
 */
