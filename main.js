@@ -1,12 +1,11 @@
 /* 
     metodos Math
 */
-//  Metodo .max()  
+//  Metodo .min()  
 
 const datos = [1,1,46,8,2,5,78,9,2];
-
-console.log(Math.max(...datos));
+console.log(Math.min(...datos));
 
 /* 
-el metodo max retorna  el maximo numero
+el metodo min retorna  el minimo numero
 */
