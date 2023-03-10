@@ -1,19 +1,20 @@
 /* 
     propiedades y metodos NUMBER
 */
-//  Metodo .toFixed
+//  Metodo .toPrecision
 
-function financial(x) {
-    return Number.parseFloat(x).toFixed(2);
+function precise(x) {
+    return x.toPrecision(4);
   }
   
-  console.log(financial(123.456));
+  console.log(precise(123.456));
   
-  console.log(financial(0.004));
+  console.log(precise(0.004));
   
-  console.log(financial('1.23e+5'));
+  console.log(precise(1.23e5));
+
 
 /* 
-El método toFixed() formatea un 
-número usando notación de punto fijo.
+El método toPrecision() devuelve una cadena 
+que representa el objeto Número con la precisión especificada.
 */
