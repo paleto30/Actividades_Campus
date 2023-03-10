@@ -1,11 +1,11 @@
 /* 
     propiedades y metodos NUMBER
 */
-// propiedad .MAX_VALUE
+// propiedad .MIN_VALUE
 
-console.log(Number.MAX_VALUE);
+console.log(Number.MIN_VALUE);
 
 /* 
-La propiedad de datos estáticos Number.MAX_VALUE 
-representa el valor numérico máximo representable en JavaScript.
- */
+La propiedad de datos estáticos Number.MIN_VALUE 
+representa el valor numérico positivo más pequeño representable en JavaScript.
+*/
