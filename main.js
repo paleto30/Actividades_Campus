@@ -1,19 +1,12 @@
 /* 
     metodos Math
 */
-//  Metodo .log()  
+//  Metodo .max()  
 
-function getBaseLog(x, y) {
-  return Math.log(y) / Math.log(x);
-}
+const datos = [1,1,46,8,2,5,78,9,2];
 
-// 2 x 2 x 2 = 8
-console.log(getBaseLog(2, 8));
-
-// 5 x 5 x 5 x 5 = 625
-console.log(getBaseLog(5, 625));
+console.log(Math.max(...datos));
 
 /* 
-El método estático Math.log() 
-devuelve el logaritmo natural (base e) de un número.
+el metodo max retorna  el maximo numero
 */
