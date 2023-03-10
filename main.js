@@ -1,11 +1,19 @@
 /* 
     propiedades y metodos NUMBER
 */
-// propiedad .NaN
+//  Metodo .toExponential
 
-console.log(Number.NaN);
+function expo(x, f) {
+    return Number.parseFloat(x).toExponential(f);
+  }
+  
+  console.log(expo(123456, 2));
+
+  console.log(expo('123456'));
+
+  console.log(expo('oink'));
 
 /* 
-La propiedad de datos estáticos Number.NaN 
-representa Not-A-Number, que es equivalente a NaN. 
+El método toExponential() devuelve una cadena que 
+representa el objeto Número en notación exponencial.
 */
