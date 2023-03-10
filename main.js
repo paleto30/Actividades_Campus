@@ -1,20 +1,16 @@
 /* 
     propiedades y metodos NUMBER
 */
-//  Metodo .toPrecision
+//  Metodo .isFinite()
 
-function precise(x) {
-    return x.toPrecision(4);
-  }
-  
-  console.log(precise(123.456));
-  
-  console.log(precise(0.004));
-  
-  console.log(precise(1.23e5));
+console.log(Number.isFinite(1 / 0));
+
+console.log(Number.isFinite(10 / 5));
+
+console.log(Number.isFinite(0 / 0));
 
 
 /* 
-El método toPrecision() devuelve una cadena 
-que representa el objeto Número con la precisión especificada.
+El método estático Number.isFinite() 
+determina si el valor pasado es un número finito.
 */
