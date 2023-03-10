@@ -1,18 +1,19 @@
 /* 
     metodos Math
 */
-//  Metodo .exp()  
+//  Metodo .log()  
 
-console.log(Math.exp(0));
+function getBaseLog(x, y) {
+  return Math.log(y) / Math.log(x);
+}
 
-console.log(Math.exp(1));
+// 2 x 2 x 2 = 8
+console.log(getBaseLog(2, 8));
 
-console.log(Math.exp(-1));
-
-console.log(Math.exp(2));
-
+// 5 x 5 x 5 x 5 = 625
+console.log(getBaseLog(5, 625));
 
 /* 
-El método estático Math.exp() devuelve 
-e elevado a la potencia de un número. Eso es
+El método estático Math.log() 
+devuelve el logaritmo natural (base e) de un número.
 */
