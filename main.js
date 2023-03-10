@@ -1,19 +1,18 @@
 /* 
     metodos Math
 */
-//  Metodo .abs()
+//  Metodo .exp()  
 
-function difference(a, b) {
-  return Math.abs(a - b);
-}
+console.log(Math.exp(0));
 
-console.log(difference(3, 5));
+console.log(Math.exp(1));
 
-console.log(difference(5, 3));
+console.log(Math.exp(-1));
 
-console.log(difference(1.23456, 7.89012));
-  
+console.log(Math.exp(2));
+
+
 /* 
-El método estático Math.abs() 
-devuelve el valor absoluto de un número.
+El método estático Math.exp() devuelve 
+e elevado a la potencia de un número. Eso es
 */
