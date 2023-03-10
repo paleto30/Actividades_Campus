@@ -1,11 +1,11 @@
 /* 
     metodos Math
 */
-//  Metodo .min()  
+//  Metodo .pow()  
 
-const datos = [1,1,46,8,2,5,78,9,2];
-console.log(Math.min(...datos));
+const datos = 12;
+console.log(Math.pow(datos,2));
 
 /* 
-el metodo min retorna  el minimo numero
+el metodo pow me permite elevar una base a un exponente indicado 
 */
