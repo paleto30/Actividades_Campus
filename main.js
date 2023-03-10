@@ -2,17 +2,17 @@
     propiedades y metodos NUMBER
 */
 
-// propiedad .POSITIVE_INFINITY
+// propiedad .NEGATIVE_INFINITY
 
 let bigNumero = Number.MAX_VALUE * 2;
 
-if (bigNumero === Number.POSITIVE_INFINITY) {
+if (bigNumero === Number.NEGATIVE_INFINITY) {
     console.log(true);
+}else{
+    console.log(false);
 }
 
-
 /* 
-La propiedad Number.POSITIVE_INFINITY representa el infinito positivo.
-No se tiene que crear un objeto Number para acceder a 
-esta propiedad estática (use Number.POSITIVE_INFINITY).  
+La propiedad de datos estáticos Number.NEGATIVE_INFINITY 
+representa el valor infinito negativo.
  */
