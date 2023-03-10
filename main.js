@@ -1,12 +1,11 @@
 /* 
     propiedades y metodos NUMBER
 */
-// propiedad .EPSILON
+// propiedad .NaN
 
-console.log(Number.EPSILON);
+console.log(Number.NaN);
 
 /* 
-La propiedad de datos estáticos Number.EPSILON 
-representa la diferencia entre 1 y el número de 
-punto flotante más pequeño mayor que 1.
+La propiedad de datos estáticos Number.NaN 
+representa Not-A-Number, que es equivalente a NaN. 
 */
