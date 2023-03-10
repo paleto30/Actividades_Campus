@@ -1,21 +1,15 @@
 /* 
     metodos Math
 */
-//  Metodo .random()  
+//  Metodo .sqrt()  
 
-function getRamdomInt(max) {
-    return Math.floor(Math.random()* max)
-}
+let dato = 81;
+let dato1= 70;
 
-console.log(getRamdomInt(3));
-
-console.log(getRamdomInt(1));
-
-console.log(Math.random());
+console.log(`raiz cuadradade de: ${dato}    es: ${Math.sqrt(dato)}`);
+console.log(`raiz cuadradade de: ${dato1}    es: ${Math.sqrt(dato1)}`);
 
 /* 
-El método estático Math.random() devuelve un número 
-pseudoaleatorio de punto flotante que es mayor o igual 
-que 0 y menor que 1, con una distribución aproximadamente 
-uniforme en ese rango, que luego puede escalar a su rango deseado.
+El método estático Math.sqrt() retorna la raiz cuadrada del
+numero que se le pase por parametro 
 */
