@@ -1,18 +1,18 @@
 /* 
-    metodo .trim()
+    propiedades y metodos NUMBER
 */
 
-let cadena = '      espacios      ';
+// propiedad .POSITIVE_INFINITY
 
-console.log(`sin trim: ${cadena}\n`);
+let bigNumero = Number.MAX_VALUE * 2;
 
-console.log(`trim:${cadena.trim()}\n`);
+if (bigNumero === Number.POSITIVE_INFINITY) {
+    console.log(true);
+}
 
 
-/*  
-    El método trim( ) elimina los espacios en blanco 
-    en ambos extremos del string. Los espacios en 
-    blanco en este contexto, son todos los caracteres 
-    sin contenido (espacio, tabulación, etc.) y todos 
-    los caracteres de nuevas lineas (LF,CR,etc.).
-*/
+/* 
+La propiedad Number.POSITIVE_INFINITY representa el infinito positivo.
+No se tiene que crear un objeto Number para acceder a 
+esta propiedad estática (use Number.POSITIVE_INFINITY).  
+ */
