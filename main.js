@@ -1,22 +1,19 @@
 /* 
-    propiedades y metodos NUMBER
+    metodos Math
 */
-//  Metodo Number.parseFloat()
+//  Metodo .abs()
 
-function circumference(r) {
-    if (Number.isNaN(Number.parseFloat(r))) {
-      return 0;
-    }
-    return parseFloat(r) * 2.0 * Math.PI ;
-  }
-  
-  console.log(circumference('4.567abcdefgh'));
-  console.log(circumference('abcdefgh'));
+function difference(a, b) {
+  return Math.abs(a - b);
+}
 
+console.log(difference(3, 5));
+
+console.log(difference(5, 3));
+
+console.log(difference(1.23456, 7.89012));
   
 /* 
-El método estático Number.parseFloat() 
-analiza un argumento y devuelve un número 
-de coma flotante. Si no se puede analizar 
-un número del argumento, devuelve NaN.
+El método estático Math.abs() 
+devuelve el valor absoluto de un número.
 */
