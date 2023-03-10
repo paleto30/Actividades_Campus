@@ -1,18 +1,11 @@
 /* 
     propiedades y metodos NUMBER
 */
+// propiedad .MAX_VALUE
 
-// propiedad .NEGATIVE_INFINITY
-
-let bigNumero = Number.MAX_VALUE * 2;
-
-if (bigNumero === Number.NEGATIVE_INFINITY) {
-    console.log(true);
-}else{
-    console.log(false);
-}
+console.log(Number.MAX_VALUE);
 
 /* 
-La propiedad de datos estáticos Number.NEGATIVE_INFINITY 
-representa el valor infinito negativo.
+La propiedad de datos estáticos Number.MAX_VALUE 
+representa el valor numérico máximo representable en JavaScript.
  */
