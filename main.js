@@ -1,20 +1,22 @@
 /* 
     metodos Math
 */
-//  Metodo .tan()   
+//  Metodo .atan2()   
 
 
-function getTanFromDegrees(degrees) {
-    return Math.tan(degrees * Math.PI / 180);
+function calcAngleDegrees(x, y) {
+    return Math.atan2(y, x) * 180 / Math.PI;
   }
   
-  console.log(getTanFromDegrees(0));
+  console.log(calcAngleDegrees(5, 5));
 
-  console.log(getTanFromDegrees(45));
+  console.log(calcAngleDegrees(10, 10));
+
+  console.log(calcAngleDegrees(0, 10));
   
-  console.log(getTanFromDegrees(90));
   
 /* 
-El método estático Math.tan() devuelve la 
-tangente de un número en radianes.
+El método estático Math.atan2() devuelve el ángulo en 
+el plano (en radianes) entre el eje x positivo y el rayo 
+desde (0, 0) hasta el punto (x, y), para Math.atan2(y, x ).
 */
