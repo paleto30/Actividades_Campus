@@ -1,20 +1,17 @@
 /* 
     metodos Math
 */
-//  Metodo .fround()  
+//  Metodo .round()  
 
-console.log(Math.fround(5.5));
+console.log(Math.round(0.9));
 
-console.log(Math.fround(5.05));
+console.log(Math.round(5.95), Math.round(5.5), Math.round(5.05));
 
-console.log(Math.fround(5));
-
-console.log(Math.fround(-5.05));
-
+console.log(Math.round(-5.05), Math.round(-5.5), Math.round(-5.95));
 
 
 /* 
-El método estático Math.fround() devuelve 
-la representación flotante de precisión 
-simple de 32 bits más cercana de un número.
+El método estático Math.round() 
+devuelve el valor de un número 
+redondeado al entero más cercano.
 */
