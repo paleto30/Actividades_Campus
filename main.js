@@ -1,17 +1,20 @@
 /* 
     metodos Math
 */
-//  Metodo .floor()  
+//  Metodo .fround()  
 
-console.log(Math.floor(.95));
+console.log(Math.fround(5.5));
 
-console.log(Math.floor(4));
+console.log(Math.fround(5.05));
 
-console.log(Math.floor(7.004));
+console.log(Math.fround(5));
 
-console.log(Math.floor(-7.004));
+console.log(Math.fround(-5.05));
+
 
 
 /* 
-Devuelve el máximo entero menor o igual a un número.
+El método estático Math.fround() devuelve 
+la representación flotante de precisión 
+simple de 32 bits más cercana de un número.
 */
