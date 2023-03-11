@@ -1,18 +1,17 @@
 /* 
     metodos Math
 */
-//  Metodo .ceil()  
+//  Metodo .floor()  
 
-console.log(Math.ceil(.95));
+console.log(Math.floor(.95));
 
-console.log(Math.ceil(4));
+console.log(Math.floor(4));
 
-console.log(Math.ceil(7.004));
+console.log(Math.floor(7.004));
 
-console.log(Math.ceil(-7.004));
+console.log(Math.floor(-7.004));
 
 
 /* 
-La función Math.ceil() devuelve el entero 
-mayor o igual más próximo a un número dado.
+Devuelve el máximo entero menor o igual a un número.
 */
