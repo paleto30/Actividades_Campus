@@ -1,17 +1,20 @@
 /* 
     metodos Math
 */
-//  Metodo .round()  
+//  Metodo .trunc()   : remover digitos fraccionarios
 
-console.log(Math.round(0.9));
+console.log(Math.trunc(13.37));
 
-console.log(Math.round(5.95), Math.round(5.5), Math.round(5.05));
+console.log(Math.trunc(42.84));
 
-console.log(Math.round(-5.05), Math.round(-5.5), Math.round(-5.95));
+console.log(Math.trunc(0.123));
+
+console.log(Math.trunc(-0.123));
+
 
 
 /* 
-El método estático Math.round() 
-devuelve el valor de un número 
-redondeado al entero más cercano.
+El método estático Math.trunc() devuelve la 
+parte entera de un número eliminando cualquier
+dígito fraccionario.
 */
