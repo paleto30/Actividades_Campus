@@ -1,21 +1,21 @@
 /* 
     metodos Math
 */
-//  Metodo .atan()   
+//  Metodo .cos()   
 
-// Calculates angle of a right-angle triangle in radians
-function calcAngle(opposite, adjacent) {
-    return Math.atan(opposite / adjacent);
+
+function getCircleX(radians, radius) {
+    return Math.cos(radians) * radius;
   }
   
+  console.log(getCircleX(1, 10));
 
-  console.log(calcAngle(8, 10));
+  console.log(getCircleX(2, 10));
+
+  console.log(getCircleX(Math.PI, 10));
   
-  console.log(calcAngle(5, 3));
-  
- 
 
 /* 
-El método estático Math.atan() devuelve 
-la tangente inversa (en radianes) de un número
+El método estático Math.cos() devuelve el 
+coseno de un número en radianes.
 */
