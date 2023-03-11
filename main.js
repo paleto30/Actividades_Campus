@@ -1,20 +1,18 @@
 /* 
     metodos Math
 */
-//  Metodo .trunc()   : remover digitos fraccionarios
+//  Metodo .acos()   
 
-console.log(Math.trunc(13.37));
+function calcAngle(adjacent, hypotenuse) {
+    return Math.acos(adjacent / hypotenuse);
+  }
+  
+  console.log(calcAngle(8, 10));
 
-console.log(Math.trunc(42.84));
-
-console.log(Math.trunc(0.123));
-
-console.log(Math.trunc(-0.123));
-
+  console.log(calcAngle(5, 90));
 
 
 /* 
-El método estático Math.trunc() devuelve la 
-parte entera de un número eliminando cualquier
-dígito fraccionario.
+El método estático Math.acos() devuelve 
+el coseno inverso (en radianes) de un número.
 */
