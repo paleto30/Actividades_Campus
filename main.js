@@ -1,18 +1,18 @@
 /* 
     metodos Math
 */
-//  Metodo .acos()   
+//  Metodo .asin()   
 
-function calcAngle(adjacent, hypotenuse) {
-    return Math.acos(adjacent / hypotenuse);
+function calcAngle(opposite, hypotenuse) {
+    return Math.asin(opposite / hypotenuse);
   }
   
-  console.log(calcAngle(8, 10));
-
-  console.log(calcAngle(5, 90));
-
+  console.log(calcAngle(6, 10));
+  
+  console.log(calcAngle(5, 3));
+ 
 
 /* 
-El método estático Math.acos() devuelve 
-el coseno inverso (en radianes) de un número.
+El método estático Math.asin() devuelve el 
+seno inverso (en radianes) de un número.
 */
