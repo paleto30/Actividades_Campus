@@ -1,21 +1,20 @@
 /* 
     metodos Math
 */
-//  Metodo .sin()   
+//  Metodo .tan()   
 
 
-function getCircleY(radians, radius) {
-    return Math.sin(radians) * radius;
+function getTanFromDegrees(degrees) {
+    return Math.tan(degrees * Math.PI / 180);
   }
   
-  console.log(getCircleY(1, 10));
+  console.log(getTanFromDegrees(0));
+
+  console.log(getTanFromDegrees(45));
   
-  console.log(getCircleY(2, 10));
-
-  console.log(getCircleY(Math.PI, 10));
-
+  console.log(getTanFromDegrees(90));
   
 /* 
-El método estático Math.sin() devuelve 
-el seno de un número en radianes.
+El método estático Math.tan() devuelve la 
+tangente de un número en radianes.
 */
