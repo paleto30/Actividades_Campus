@@ -1,15 +1,18 @@
 /* 
     metodos Math
 */
-//  Metodo .sqrt()  
+//  Metodo .ceil()  
 
-let dato = 81;
-let dato1= 70;
+console.log(Math.ceil(.95));
 
-console.log(`raiz cuadradade de: ${dato}    es: ${Math.sqrt(dato)}`);
-console.log(`raiz cuadradade de: ${dato1}    es: ${Math.sqrt(dato1)}`);
+console.log(Math.ceil(4));
+
+console.log(Math.ceil(7.004));
+
+console.log(Math.ceil(-7.004));
+
 
 /* 
-El método estático Math.sqrt() retorna la raiz cuadrada del
-numero que se le pase por parametro 
+La función Math.ceil() devuelve el entero 
+mayor o igual más próximo a un número dado.
 */
