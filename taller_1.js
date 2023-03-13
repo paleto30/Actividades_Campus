@@ -1,13 +1,15 @@
 /* 
-    ejercicio # 2
-
-    Dado un número indicar si es par o impar y si es mayor de 10.
+    ejercicio # 3
+    
+    Construir el algoritmo para determinar el voltaje de un
+    circuito a partir de la resistencia y la intensidad de corriente.
 */
 
 do {
   
-    let numero = Number(prompt("Ingrese un numero Entero: "))
-    let resultado = numero % 2 == 0 ? `el numero ${numero} es par`: `el numero ${numero} es impar.`
-    alert(resultado)
+    let recistencia = Number(prompt("Ingrese el valor de la resistencia: "))
+    let intensidad = Number(prompt("Ingrese la intencidad de la corriente: "))
 
-} while (confirm("¿ Desea verificar otro numero ?"));
+    alert(`el Voltaje calculado es de: ${recistencia*intensidad} V`)
+
+} while (confirm("¿ Desea verificar voltaje ?"));
