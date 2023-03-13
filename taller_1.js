@@ -1,15 +1,21 @@
 /* 
-    ejercicio # 3
+    ejercicio # 4
     
-    Construir el algoritmo para determinar el voltaje de un
-    circuito a partir de la resistencia y la intensidad de corriente.
+    Construir el algoritmo que solicite el nombre y edad de 3
+    personas y determine el nombre de la persona con mayor edad.
 */
 
 do {
   
-    let recistencia = Number(prompt("Ingrese el valor de la resistencia: "))
-    let intensidad = Number(prompt("Ingrese la intencidad de la corriente: "))
+    const personas = [];
+    for (let i = 0; i < 3; i++) {
+        let nombre = String(prompt("Ingrese el nombre: "))
+        let edad = String(prompt("Ingrese la edad: "))
+        personas.push({nombre,edad})
+    }  
 
-    alert(`el Voltaje calculado es de: ${recistencia*intensidad} V`)
+    let result = personas.sort((a,b) => b.edad -a.edad);
+    alert(`La persona de mayor edad es:\nNombre: ${result[0].nombre}\nedad: ${result[0].edad}`)
+   
 
-} while (confirm("¿ Desea verificar voltaje ?"));
+} while (confirm("¿ Desea verificar otras personas ?"));
