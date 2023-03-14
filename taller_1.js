@@ -1,21 +1,21 @@
 /* 
-    ejercicio # 4
+    ejercicio # 5
     
-    Construir el algoritmo que solicite el nombre y edad de 3
-    personas y determine el nombre de la persona con mayor edad.
+    Construir el algoritmo que lea por teclado dos números,
+    si el primero es mayor al segundo informar su suma y
+    diferencia, en caso contrario, informar el producto y la
+    división del primero respecto al segundo.
 */
 
 do {
-  
-    const personas = [];
-    for (let i = 0; i < 3; i++) {
-        let nombre = String(prompt("Ingrese el nombre: "))
-        let edad = String(prompt("Ingrese la edad: "))
-        personas.push({nombre,edad})
-    }  
+    
+    let n1 = Number(prompt("Ingrese el numero 1: "))
+    let n2 = Number(prompt("Ingrese la numero 2: "))
+    
+    const result = n1 > n2 ? `la suma de los numeros es: ${n1+n2}
+                            \nla diferencia de los numeros es: ${n1-n2}`
+                            : `el producto de los numero es: ${n1*n2}
+                            \nla division de los numeros es: ${n1/n2}`
 
-    let result = personas.sort((a,b) => b.edad -a.edad);
-    alert(`La persona de mayor edad es:\nNombre: ${result[0].nombre}\nedad: ${result[0].edad}`)
-   
-
+    alert(result)
 } while (confirm("¿ Desea verificar otras personas ?"));
