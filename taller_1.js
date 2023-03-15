@@ -24,13 +24,18 @@ do {
 
             datos.unshift(obj)
             flag = confirm("¿ Desea registrar otro producto ?");
-        }
-        
+        } 
         console.log(datos);
-            
-
+        let total = 0;
+        for (const [k,v] of Object.entries(datos)) {
+            total += v.total
+            console.log("llave: ",k,"valor: ",v);
+        }
+        console.log(`Total a pagar de la factura es: `,total)
+        alert(`el total es: ${total}`)
     } catch (error) {
         
+        console.log("Error en java script");
 
     }
     
