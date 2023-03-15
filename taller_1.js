@@ -1,23 +1,30 @@
 /* 
-    ejercicio # 8
+    ejercicio # 9
     
-    Programa que Ingrese por teclado:
-    a. el valor del lado de un cuadrado para mostrar por pantalla el
-    perímetro del mismo
-    b. la base y la altura de un rectángulo para mostrar el área del
-    mismo
+    N atletas han pasado a finales en salto triple en los juegos
+    olímpicos femenino de 2022. Diseñe un programa que pida por
+    teclado los nombres de cada atleta finalista y a su vez, sus
+    marcas del salto en metros. Informar el nombre de la atleta
+    campeona que se quede con la medalla de oro y si rompió
+    récord, reportar el pago que será de 500 millones. El récord
+    esta en 15,50 metros.
 */
 
+let atletas = [];
+const record = 15.50;
 
-do {
-    
-    let lado = Number(prompt("Este programa calcula el valor del perimetro de un cuadrado\nIngrese el valor de el lado de un cuadrado: (cm)"))
-    alert(`EL PERIMETO DEL CUADRADO ES: ${lado*4}`)
+do {    
+    let nombre = String(prompt("Ingrese el nombre del Atleta: "));
+    let marca = Number(prompt("Ingrese el Registro de la marca: "));
+    const atleta = {
+        nombre,
+        marca
+    }
+    atletas.unshift(atleta);
 
-    let base = Number(prompt("Vamos a calcular el area de un Triangulo\nIngrese la base: (cm)"))
-    let altura = Number(prompt("Ingrese la altura: (cm)"))
+} while (confirm("¿ Desea Agregar otro Atleta ?"));
 
-    alert(`EL AREA DEL TRIANGULO ES: ${(base*altura)/2} (cm)`)
+let mejor = atletas.sort((a,b) => (a.marca < b.marca ) ? 1:(a.marca > b.marca) ? -1 : 0)
+let res = mejor[0].marca > record ? `\n¡¡ NUEVO RECORD REGISTRADO !!\n-- GANO 500 MILLONES --\nel Campeon fue:  ${mejor[0].nombre}\nSu marca fue:  ${mejor[0].marca} metros`:`el Campeon fue:  ${mejor[0].nombre}\nSu marca fue:  ${mejor[0].marca} metros.`;
 
-
-} while (confirm("¿ Desea Ingresar otros valores ?"));
+alert(res);
