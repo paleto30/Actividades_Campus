@@ -1,42 +1,23 @@
 /* 
-    ejercicio # 7
+    ejercicio # 8
     
-    Programa que pida el ingreso del nombre y precio de un artículo y la
-    cantidad que lleva el cliente. Mostrar lo que debe pagar el comprador
-    en su factura.
+    Programa que Ingrese por teclado:
+    a. el valor del lado de un cuadrado para mostrar por pantalla el
+    perímetro del mismo
+    b. la base y la altura de un rectángulo para mostrar el área del
+    mismo
 */
 
 
 do {
-    let datos = [];
-    try {
-        let flag = true;
-        while(flag){
-            let articulo = String(prompt("Ingrese el nombre del articulo: "));
-            let precio = Number(prompt("Ingrese el precio del articulo: "));
-            let cantidad= Number(prompt("Ingrese la cantidad de articulos: "));
-            let obj = {
-                articulo,
-                precio,
-                cantidad,
-                total : precio*cantidad,
-            }
-
-            datos.unshift(obj)
-            flag = confirm("¿ Desea registrar otro producto ?");
-        } 
-        console.log(datos);
-        let total = 0;
-        for (const [k,v] of Object.entries(datos)) {
-            total += v.total
-            console.log("llave: ",k,"valor: ",v);
-        }
-        console.log(`Total a pagar de la factura es: `,total)
-        alert(`el total es: ${total}`)
-    } catch (error) {
-        
-        console.log("Error en java script");
-
-    }
     
-} while (confirm("¿ Desea Realizar un nuevo Registro ?"));
+    let lado = Number(prompt("Este programa calcula el valor del perimetro de un cuadrado\nIngrese el valor de el lado de un cuadrado: (cm)"))
+    alert(`EL PERIMETO DEL CUADRADO ES: ${lado*4}`)
+
+    let base = Number(prompt("Vamos a calcular el area de un Triangulo\nIngrese la base: (cm)"))
+    let altura = Number(prompt("Ingrese la altura: (cm)"))
+
+    alert(`EL AREA DEL TRIANGULO ES: ${(base*altura)/2} (cm)`)
+
+
+} while (confirm("¿ Desea Ingresar otros valores ?"));
