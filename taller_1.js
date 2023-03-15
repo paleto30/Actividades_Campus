@@ -1,30 +1,34 @@
 /* 
-    ejercicio # 9
+    ejercicio # 10
     
-    N atletas han pasado a finales en salto triple en los juegos
-    olímpicos femenino de 2022. Diseñe un programa que pida por
-    teclado los nombres de cada atleta finalista y a su vez, sus
-    marcas del salto en metros. Informar el nombre de la atleta
-    campeona que se quede con la medalla de oro y si rompió
-    récord, reportar el pago que será de 500 millones. El récord
-    esta en 15,50 metros.
+    Desarrolle un programa cíclico que capture un dato
+    numérico cada vez, y los vaya acumulando. El programa se
+    detiene cuando el usuario digita un cero. El programa debe
+    mostrar: LA SUMATORIA DE LOS VALORES, EL VALOR DEL
+    PROMEDIO, CUÁNTOS VALORES FUERON DIGITADOS, MAYOR
+    VALOR Y MENOR VALOR.
 */
 
-let atletas = [];
-const record = 15.50;
-
+let datos = [];
+let flag = true;
 do {    
-    let nombre = String(prompt("Ingrese el nombre del Atleta: "));
-    let marca = Number(prompt("Ingrese el Registro de la marca: "));
-    const atleta = {
-        nombre,
-        marca
-    }
-    atletas.unshift(atleta);
+    
+    let numero = Number(prompt("Ingrese un numero: "));
+    datos.unshift(numero);
+    
+    flag = numero == 0 ? false : true;
 
-} while (confirm("¿ Desea Agregar otro Atleta ?"));
+} while (flag);
 
-let mejor = atletas.sort((a,b) => (a.marca < b.marca ) ? 1:(a.marca > b.marca) ? -1 : 0)
-let res = mejor[0].marca > record ? `\n¡¡ NUEVO RECORD REGISTRADO !!\n-- GANO 500 MILLONES --\nel Campeon fue:  ${mejor[0].nombre}\nSu marca fue:  ${mejor[0].marca} metros`:`el Campeon fue:  ${mejor[0].nombre}\nSu marca fue:  ${mejor[0].marca} metros.`;
+let sumatoria = datos.reduce((anterior, actual)=>{
+    return anterior+actual;
+}, 0);
 
-alert(res);
+let promedio = sumatoria/(datos.length - 1);
+let mayor = Math.max(...datos);
+datos.shift(0);
+let menor = Math.min(...datos);
+
+console.log(datos);
+alert(`     ¡¡ Resultados !!\nSumatoria =  ${sumatoria}\nPromedio =  ${promedio}\nCantidad de valores: ${datos.length}
+\nValor Mayor = ${mayor}\nValor Menor = ${menor}`);
