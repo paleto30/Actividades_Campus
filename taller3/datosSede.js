@@ -88,12 +88,33 @@ formTrainers.addEventListener('submit',(e)=>{
 });
 
 
+
+
+
+
+// teams para campers
+const selectSedeCamper = document.querySelector("#cpSedes");
+console.log(selectSedeCamper);
+selectSedeCamper.addEventListener('click',(e)=>{
+    e.preventDefault();
+    listarTeamsC(selectSedeCamper.value);
+})
+
+function listarTeamsC(sede) {
+    const etiqueta = document.querySelector("#teamsC");
+    etiqueta.innerHTML = null;
+    for (let [k,v] of Object.entries(campus[sede]["team"])) {
+        etiqueta.insertAdjacentHTML("beforeend",`
+            <option value="${k}">${v.nombre} - ${v.jornada} - ${v.horario} </option> 
+        `)
+    }
+}
+
+
 /* 
     Regitrar un camper 
 */
-
 const formCampers = document.querySelector("#camper");
-
 formCampers.addEventListener('submit',(e)=>{
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target))

@@ -85,6 +85,12 @@
                     <label for="email">Ingrese el Email:</label><br>
                     <input type="email" name="email" id="email"><br><br>
 
+                    <label for="materiaT">Seleccione el Asignatura:</label><br>
+                    <select name="asignatura" id="materiaT">
+                        <option value="">--seleccione--</option>
+                        <option value="software"> Software </option>
+                    </select><br><br>
+
                     <label for="teamsT">Seleccione el Team:</label><br>
                     <select name="teams" id="teamsT">
                         <option value="">--seleccione--</option>
@@ -108,9 +114,28 @@
                     <input type="text" name="telefono" id="Ctelefono"><br><br>
                     <label for="Cemail">Ingrese el Email:</label><br>
                     <input type="text" name="email" id="Cemail"><br><br>
+                        
+                    <label for="Cdireccion">Ingrese la Dirección:</label><br>
+                    <input type="text" name="direccion" id="Cdireccion"><br><br>
+
+                    <div class="radioGrup" >
+                        <label for="nivel">Nivel:</label>
+                        <br>
+                        <input type="radio" name="nivel" id="basico" value="Basico"><label for="">Basico</label>&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="nivel" id="medio" value="Medio"><label for="">Medio</label>&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="nivel" id="avanzado" value="Avanzado"><label for="">Avanzado</label>
+                    </div>
+                    <br><br>
+                    <div class="radioGrup" >
+                        <label for="nivel">Transporte:</label>
+                        <br>
+                        <input type="radio" name="transporte" id="basico" value="Basico"><label for="">Moto</label>&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="transporte" id="medio" value="Medio"><label for="">Carro</label>&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="transporte" id="avanzado" value="Avanzado"><label for="">Otros</label><br><br>
+                    </div>
                     <label for="teamsT">Seleccione el Team:</label><br>
                     <select name="teams" id="teamsC">
-                        <option value="">--seleccione--</option>
+                        <option value=""> --seleccione-- </option>
                     </select><br><br>
                     <input type="submit" value="Guardar">
                 </form>
