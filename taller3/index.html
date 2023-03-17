@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="datosSede.js" type="module" async></script>
+    <title>Document</title>
+
+    <style>
+
+        .container{
+            display: flex; justify-content: center;
+        }
+        .contenido{
+            width: 500px;
+            text-align: center;
+            background-color: rgb(180, 248, 248);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="contenido">
+
+            <!--  Formulario para registro de sedes -->
+            <fieldset>
+                <legend >REGISTRAR SEDE CAMPUS</legend>
+                <form id="sede">
+                    <br>
+                    <label for="nsede">Nombre de la sede:</label><br>         
+                    <input type="text" name="nombre" id="nsede"><br><br>
+                    <label for="dirS">Direccion de la sede:</label><br>
+                    <input type="text" name="direccion" id="dirS" ><br><br>
+                    <label for="conS">Contacto de la sede:</label><br>
+                    <input type="text" name="contacto" id="conS" ><br><br>
+                    <input type="submit" value="Guardar">
+                </form>
+            </fieldset>
+            <br>
+
+            <!-- Formulario para registro de Teams -->
+            <fieldset>
+                <legend>REGISTRAR TEAM'S</legend>
+                <form id="team">
+                    <br>
+                    <label for="tsedes">Sede a la que Pertenecera:</label><br>        
+                    <select name="sede" id="tsedes">
+                        <!-- <option value=""></option> -->
+                    </select><br><br>
+                    <label for="dirS">Nombre del Team que va a Registrar:</label><br>
+                    <input type="text" name="nombre" id="teamNom" ><br><br>
+                    <label for="horario">Jornada de Clases:</label><br>
+                    <select name="horario" id="horario">
+                        <option selected >seleccione uno</option>
+                        <option value="Mañana" >Mañana</option>
+                        <option value="Tarde" >Tarde</option>
+                    </select>
+                    <br><br>
+                    <input type="radio" name="jornada" id="grupo1" value="horario1" >
+                    <label for="grupo1">Horario 1</label>
+                    <input type="radio" name="jornada" id="grupo2" value="horario2">
+                    <label for="grupo2">Horario 2</label>
+                    <br><br>
+                    <input type="submit" value="Guardar">
+                </form>
+            </fieldset>
+            <br>
+            <!-- Formulario para Trainers -->
+            <fieldset>
+                <legend>REGISTRAR TRAINER'S</legend>
+                <form id="trainer">
+                    <br>
+                    <label for="trSedes">Seleccione la sede a la que Pertenecerá:</label><br>
+                    <select name="sedeT" id="trSedes">
+                        <!-- <option value="0" selected>seleccione</option> -->
+                    </select><br><br>
+                    <label for="nom_trainer">Ingrese El nombre:</label><br>
+                    <input type="text" name="nombre" id="nom_trainer"><br><br>
+
+                    <label for="tel_trainer">Ingrese El telefono:</label><br>
+                    <input type="text" name="telefono" id="tel_trainer"><br><br>
+
+                    <label for="email">Ingrese el Email:</label><br>
+                    <input type="email" name="email" id="email"><br><br>
+
+                    <label for="teamsT">Seleccione el Team:</label><br>
+                    <select name="teams" id="teamsT">
+                        <option value="">--seleccione--</option>
+                    </select><br><br>
+                    <input type="submit" value="Guardar">
+                </form>
+            </fieldset><br>
+
+            <!-- Formulario para los Campers -->
+
+            <fieldset>
+                <legend>REGISTRAR UN CAMPER</legend><br>
+                <form id="camper">
+                    <label for="cpSedes">Seleccione la sede a la que Pertenecerá:</label><br>
+                    <select name="sedeC" id="cpSedes">
+                        <!-- <option value="0" selected>seleccione</option> -->
+                    </select><br><br>
+                    <label for="Cnombre">Ingrese el Nombre:</label><br>
+                    <input type="text" name="nombre" id="Cnombre"><br><br>
+                    <label for="Ctelefono">Ingrese el Telefono:</label><br>
+                    <input type="text" name="telefono" id="Ctelefono"><br><br>
+                    <label for="Cemail">Ingrese el Email:</label><br>
+                    <input type="text" name="email" id="Cemail"><br><br>
+                    <label for="teamsT">Seleccione el Team:</label><br>
+                    <select name="teams" id="teamsC">
+                        <option value="">--seleccione--</option>
+                    </select><br><br>
+                    <input type="submit" value="Guardar">
+                </form>
+            </fieldset>
+        </div>
+    </div>
+        
+
+</body>
+</html>
