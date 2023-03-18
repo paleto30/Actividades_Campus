@@ -51,22 +51,51 @@
                     </select><br><br>
                     <label for="dirS">Nombre del Team que va a Registrar:</label><br>
                     <input type="text" name="nombre" id="teamNom" ><br><br>
-                    <label for="horario">Jornada de Clases:</label><br>
-                    <select name="horario" id="horario">
+                    <label for="jornada">Jornada de Clases:</label><br>
+                    <select name="jornada" id="Jornada">
                         <option selected >seleccione uno</option>
                         <option value="Mañana" >Mañana</option>
                         <option value="Tarde" >Tarde</option>
                     </select>
                     <br><br>
-                    <input type="radio" name="jornada" id="grupo1" value="horario1" >
+                    <input type="radio" name="horario" id="grupo1" value="A" >
                     <label for="grupo1">Horario 1</label>
-                    <input type="radio" name="jornada" id="grupo2" value="horario2">
+                    <input type="radio" name="horario" id="grupo2" value="B">
                     <label for="grupo2">Horario 2</label>
                     <br><br>
                     <input type="submit" value="Guardar">
                 </form>
             </fieldset>
             <br>
+
+            <!--  Formulario para registro de Asignaturas -->
+            <fieldset>
+                <legend >REGISTRAR ASIGNATURA</legend><br>
+                <form id="asignaturaf">
+                    <label for="asedes">Sede a la que Pertenecera:</label><br>        
+                    <select name="sede" id="asedes">
+                        <!-- <option value=""></option> -->
+                    </select><br>
+                    <br>
+                    <label for="nombre">Nombre Asignatura:</label><br>         
+                    <input type="text" name="nombre" id="nsede"><br>
+                    <div class="modalida">
+                        <input type="radio" name="modalidad" id="presencial" value="Presencial"><label for="">Presencial</label><br>
+                        <input type="radio" name="modalidad" id="remoto" value="Remoto"><label for="">Remoto</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                    <br>
+                    <label for="sandbox"> Sanbox:</label><br>
+                    <input type="radio" name="sandbox" id="sandbox" value="true"><label for="sandbox">Si</label>
+                    <input type="radio" name="sandbox" id="sandbox" value="false"><label for="sandbox">No</label>
+                    <br><br>
+                    <label for="preReg">Prerrequisitos:</label><br>
+                    <textarea name="prerrequisitos" id="preReg" cols="28" rows="4"></textarea><br><br>
+                    <input type="submit" value="Guardar">
+                   
+                </form>
+            </fieldset>
+            <br>
+
             <!-- Formulario para Trainers -->
             <fieldset>
                 <legend>REGISTRAR TRAINER'S</legend>
@@ -85,12 +114,12 @@
                     <label for="email">Ingrese el Email:</label><br>
                     <input type="email" name="email" id="email"><br><br>
 
-                    <label for="materiaT">Seleccione el Asignatura:</label><br>
+                    <label for="materiaT">Seleccione Asignatura:</label><br>
                     <select name="asignatura" id="materiaT">
                         <option value="">--seleccione--</option>
-                        <option value="software"> Software </option>
-                    </select><br><br>
-
+                    </select>
+                    
+                   <br><br>
                     <label for="teamsT">Seleccione el Team:</label><br>
                     <select name="teams" id="teamsT">
                         <option value="">--seleccione--</option>
@@ -127,20 +156,50 @@
                     </div>
                     <br><br>
                     <div class="radioGrup" >
-                        <label for="nivel">Transporte:</label>
+                        <label for="transporte">Transporte:</label>
                         <br>
-                        <input type="radio" name="transporte" id="basico" value="Basico"><label for="">Moto</label>&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="transporte" id="medio" value="Medio"><label for="">Carro</label>&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="transporte" id="avanzado" value="Avanzado"><label for="">Otros</label><br><br>
+                        <input type="radio" name="transporte" id="moto" value="moto"><label for="">Moto</label>&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="transporte" id="carro" value="carro"><label for="">Carro</label>&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="transporte" id="otros" value="otros"><label for="">Otros</label><br><br>
                     </div>
                     <label for="teamsT">Seleccione el Team:</label><br>
                     <select name="teams" id="teamsC">
                         <option value=""> --seleccione-- </option>
                     </select><br><br>
+                    <label for="salon">Seleccione el Salon:</label><br>
+                    <select name="salon" id="salonC">
+                        <option value=""> --seleccione-- </option>
+                        <option value="Apolo">Apolo</option>
+                        <option value="Artemis">Artemis</option>
+                        <option value="Sputnik">Sputnik</option>
+                    </select><br><br>
                     <input type="submit" value="Guardar">
                 </form>
             </fieldset>
-        </div>
+
+            <br><br><br>
+            <fieldset>
+                <legend>CONSULTAS DISPONIBLES</legend><br>
+
+                <label for="cpSedes">Seleccione la sede a la que Pertenecerá:</label><br>
+                    <select name="sedeCn" id="conSedes">
+                        <!-- <option value="0" selected>seleccione</option> -->
+                </select><br><br>
+
+                <label for="">De los trainers, reportar si la asignatura (tecnología) es
+                    remota o presencial y de los campers el nombre de salón.</label><br>
+                <input type="button" value="Consultar" id="consulta1"><br><br>
+                <label for="">De la asignatura (tecnología) si tiene sandbox o no</label><br>
+                <input type="button" value="Consultar" id="consulta3"><br>
+            </fieldset>
+            <br>
+            <fieldset>
+                <label for="">El teléfono de la sede de Medellín y la dirección de la
+                    sede de Bucaramanga</label><br>
+                <input type="button" value="Consultar"  id="consulta2"><br><hr>
+
+            </fieldset>
+        </div> 
     </div>
         
 
