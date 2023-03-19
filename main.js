@@ -5,25 +5,32 @@
 
 /* 
 
-  funciones anónimas 
+  funciones callbacks 
 
-  Las funciones anónimas o funciones lambda son un tipo 
-  de funciones que se declaran sin nombre de función 
-  y se alojan en el interior de una variable y haciendo 
-  referencia a ella cada vez que queramos utilizarla:
+  A grandes rasgos, un callback (llamada hacia atrás) 
+  es pasar una función B por parámetro a una función A, 
+  de modo que la función A puede ejecutar esa función B 
+  de forma genérica desde su código, y nosotros podemos 
+  definirlas desde fuera de dicha función:
 
 */
 
-const anonimaSaludar = () =>{ 
-  console.log("Hola mundo\nSoy una funcion anonima, almacenada ena variable");
-}
+// fB = Función B
+const fB = function () {
+  console.log("Función B ejecutada.");
+};
 
-console.log(anonimaSaludar);
-anonimaSaludar();
+// fA = Función A
+const fA = function (callback) {
+  callback();
+};
+
+fA(fB);
 
 /* 
-  La diferencia fundamental entre las funciones por declaración 
-  y las funciones por expresión es que estas últimas sólo 
-  están disponibles a partir de la inicialización de la variable. 
-  Si «ejecutamos la variable» antes de declararla, nos dará un error.
+ Esto nos podría permitir crear varias funciones para 
+ utilizar a modo de callback y reutilizarlas posteriormente 
+ con diferentes propósitos. De hecho, los callbacks muchas 
+ veces son la primera estrategia que se suele utilizar en 
+ Javascript para trabajar la asincronía,
 */
