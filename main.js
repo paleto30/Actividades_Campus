@@ -3,43 +3,40 @@
   que se manejan en javascript    
 */
 
-
 /* 
-  Hay varias formas de crear funciones en Javascript: por declaración 
-  (la más usada por principiantes), por expresión 
-  (la más habitual en programadores con experiencia) o 
-  mediante constructor de objeto (no recomendada):
+  Funciones por expresión
+
+Sin embargo, en Javascript es muy habitual encontrarse 
+códigos donde los programadores «guardan funciones» dentro de 
+variables, para posteriormente «ejecutar dichas variables». 
+se trata de un enfoque diferente, creación de funciones por 
+expresión, que fundamentalmente, hacen lo mismo con algunas diferencias:
 */
 
+const saludo = function saludar() {
+  return "Hola";
+};
 
-// sintaxis para crear una funcion declarativa 
+console.log(saludo());
 
-function myFunction(nombre) {
-  return `Hola ${nombre}`;
-}
 
-let nombre = "Andres Galvis"
+/*  
+  Con este nuevo enfoque, estamos creando una función en el interior de una variable, 
+  lo que nos permitirá posteriormente ejecutar la variable (como si fuera una función). 
+  Observa que el nombre de la función (en este ejemplo: saludar) pasa a ser inútil, 
+  ya que si intentamos ejecutar saludar() nos dirá que no existe y si intentamos 
+  ejecutar saludo() funciona correctamente.
 
-console.log(myFunction(nombre));
-
-/* 
-  Funciones por declaración
-
-Probablemente, la forma más popular de estas tres, y a la que estaremos 
-acostumbrados si venimos de otros lenguajes de programación, es la primera, 
-a la creación de funciones por declaración. Esta forma permite declarar una 
-función que existirá a lo largo de todo el código:
-
-estas  funciones se pueden ejecutar antes de haberse creado ,
-es decir puedes declararla mass abajo de donde necesitas implementarla
-  ejm:
+  ¿Qué ha pasado? Ahora el nombre de la función pasa a ser el nombre de la variable, 
+  mientras que el nombre de la función desaparece y se omite, dando paso a lo que se 
+  llaman las funciones anónimas (o funciones lambda).
+  ejemplo:
 */
 
+const funcionAnonima = function (){
+    console.log("soy una funcion anonima");
+};
 
-console.log(otraFunction());
-
-// como podemos observar primero estoy invocando la funcion en el console.log(),
-// y luego la estoy declarando (dando una estructura a dicha funcion)  
-function otraFunction() {
-  return `hola mundo`
-}
+console.log(funcionAnonima);  // como vemos , si imprimimos la variable , nos retorna su contenido
+funcionAnonima(); // y si imprimimos la variable como funcion , nos retorna la operacion de la  funcion que contiene;
+ 
