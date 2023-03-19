@@ -5,32 +5,30 @@
 
 /* 
 
-  funciones callbacks 
+  funciones Autoejecutables 
 
-  A grandes rasgos, un callback (llamada hacia atrás) 
-  es pasar una función B por parámetro a una función A, 
-  de modo que la función A puede ejecutar esa función B 
-  de forma genérica desde su código, y nosotros podemos 
-  definirlas desde fuera de dicha función:
-
+  Pueden existir casos en los que necesites crear una 
+  función y ejecutarla sobre la marcha. En Javascript 
+  es muy sencillo crear funciones autoejecutables. Básicamente, 
+  sólo tenemos que envolver entre paréntesis la función anónima 
+  en cuestión (no necesitamos que tenga nombre, puesto que no la 
+  vamos a guardar) y luego, ejecutarla:
+  
 */
 
-// fB = Función B
-const fB = function () {
-  console.log("Función B ejecutada.");
-};
+// Función autoejecutable
+(function () {
+  console.log("Hola!!");
+})();
 
-// fA = Función A
-const fA = function (callback) {
-  callback();
-};
-
-fA(fB);
 
 /* 
- Esto nos podría permitir crear varias funciones para 
- utilizar a modo de callback y reutilizarlas posteriormente 
- con diferentes propósitos. De hecho, los callbacks muchas 
- veces son la primera estrategia que se suele utilizar en 
- Javascript para trabajar la asincronía,
+De hecho, también podemos utilizar parámetros en 
+dichas funciones autoejecutables. Observa que sólo 
+hay que pasar dichos parámetros al final de la función autoejecutable. 
 */
+
+// Función autoejecutable con parámetros
+(function (name) {
+  console.log(`¡Hola, ${name}!`);
+})("Andres");
