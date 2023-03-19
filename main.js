@@ -1,52 +1,52 @@
 /* 
-  Investigacion acerca de los tipos de funciones 
-  que se manejan en javascript    
+  Investigacion acerca de el metodo Object.fromEntries()
 */
 
 /* 
-
-  ArrowFunctions  o funciones flecha  
-
-  Las Arrow functions, funciones flecha o «fat arrow» 
-  son una forma corta de escribir funciones que aparece en 
-  Javascript a partir de ECMAScript 6. Básicamente, 
-  se trata de reemplazar eliminar la palabra 
-  function y añadir => antes de abrir las llaves:
-  
-
+  El método Object.fromEntries() transforma una 
+  lista de pares con [clave-valor] en un objeto. 
 */
-// declaracion
-const functionNormal = function () {
-  console.log("Función tradicional.");
-};
-functionNormal();
 
-const functionFlecha = () => {
-  console.log("Función flecha.");
-};
-functionFlecha();
+const entries = new Map([
+  ['foo', 'bar'],
+  ['baz', 42]
+]);
 
-const func = () => "Función flecha."; // 0 parámetros: Devuelve "Función flecha"
-const func1 = (e) => e + 1; // 1 parámetro: Devuelve el valor de e + 1
-const func2 = (a, b) => a + b; // 2 parámetros: Devuelve el valor de a + b
+const obj = Object.fromEntries(entries);
 
-console.log(func());
-console.log(func1(2));
-console.log(func2(5,10));
-/* 
-  Las funciones flecha hacen que el código sea mucho más legible 
-  y claro de escribir, mejorando la productividad y la claridad 
-  a la hora de escribir código.
-*/
+console.log(obj);
+// Expected output: Object { foo: "bar", baz: 42 }
 
 
 /* 
-  Sin embargo, las funciones flechas tienen algunas ventajas a la hora de simplificar código bastante interesantes:
+    Descripción:
 
-  Si el cuerpo de la función sólo tiene una línea, podemos omitir las llaves ({}).
-  Además, en ese caso, automáticamente se hace un return de esa única línea, por lo que podemos omitir también el return.
-  En el caso de que la función no tenga parámetros, se indica como en el ejemplo anterior: () =>.
-  En el caso de que la función tenga un solo parámetro, se puede indicar simplemente el nombre del mismo: e =>.
-  En el caso de que la función tenga 2 ó más parámetros, se indican entre paréntesis: (a, b) =>.
-  Si queremos devolver un objeto, que coincide con la sintaxis de las llaves, se puede englobar con paréntesis: ({name: 'Manz'}).
+    El método Object.fromEntries() toma una lista de pares con clave-valor 
+    y devuelve un nuevo objeto cuyas propiedades son dadas por éstas entradas. 
+    El argumento iterador se espera que sea un objeto que implemente un método 
+    @@iterator, que devuelve un objeto iterador, que produce un objeto tipo 
+    array de dos elementos, donde el primer elemento es un valor que se usará 
+    como la clave de la propiedad, y el segundo elemento es el valor a 
+    asociar con esa clave de propiedad.
 */
+
+// convirtiendo un arreglo en un objeto 
+
+const arr = [ ['0', 'a'], ['1', 'b'], ['2', 'c'] ];
+const obj1 = Object.fromEntries(arr);
+console.log(obj1); // { 0: "a", 1: "b", 2: "c" }
+
+
+
+// Transformacion de objetos
+
+const object1 = { a: 1, b: 2, c: 3 };
+
+const object2 = Object.fromEntries(
+  Object.entries(object1)
+  .map(([ key, val ]) => [ key, val * 2 ])
+);
+
+console.log("\nobjeto sin transformar:\n",object1);
+console.log("\nobjeto transformado:\n",object2);
+// { a: 2, b: 4, c: 6 }
