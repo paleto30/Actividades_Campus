@@ -1,25 +1,21 @@
-
-
-
 // selector 
 
 let campus = {};
-const formSede =  document.querySelector("#sede");
-
+const formSede = document.querySelector("#sede");
 
 
 /* formulario de las sedes */
 formSede.addEventListener("submit", (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target));
-    campus[`${data.nombre}`]= {
-        direccion:data.direccion,
-        contacto:data.contacto,
-        team:[],
-        campers:[],
-        trainers:[],
-        roadmap:[],
-        asignaturas:[]
+    campus[`${data.nombre}`] = {
+        direccion: data.direccion,
+        contacto: data.contacto,
+        team: [],
+        campers: [],
+        trainers: [],
+        roadmap: [],
+        asignaturas: []
     }
     formSede.reset();
     //console.log(campus);
@@ -37,37 +33,33 @@ formSede.addEventListener("submit", (e) => {
 
 
 /* funcion que lista las sedes */
-const listarSedes = (etiqueta) =>{
+const listarSedes = (etiqueta) => {
     etiqueta.innerHTML = null;
-    for (let [k,v] of Object.entries(campus)) {
+    for (let [k, v] of Object.entries(campus)) {
         etiqueta.insertAdjacentHTML("beforeend",
-        `
+            `
             <option value="${k}">${k}</option>   
         `)
     }
 }
 
-
 /* formulario de los teams */
 const formTeam = document.querySelector("#team");
-formTeam.addEventListener("submit",(e)=>{
+formTeam.addEventListener("submit", (e) => {
     e.preventDefault();
     const dato = Object.fromEntries(new FormData(e.target));
-    campus[dato.sede]["team"].push(dato);  
+    campus[dato.sede]["team"].push(dato);
     formTeam.reset();
     console.log(campus);
-    
-}) 
 
-
+})
 
 //formulario para asignaturas
-
 const formAsignatura = document.querySelector("#asignaturaf");
-formAsignatura.addEventListener("submit",(e)=>{
+formAsignatura.addEventListener("submit", (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target));
-    campus[data.sede]['asignaturas'].push(data); 
+    campus[data.sede]['asignaturas'].push(data);
     formAsignatura.reset();
     console.log(campus);
 });
@@ -75,7 +67,7 @@ formAsignatura.addEventListener("submit",(e)=>{
 
 // para cuando dan click en la sede de Trainers
 const sedeTrainerSelect = document.querySelector("#trSedes");
-sedeTrainerSelect.addEventListener("click",(e)=>{
+sedeTrainerSelect.addEventListener("click", (e) => {
     e.preventDefault();
     listarTeams(sedeTrainerSelect.value);
     listarAsignaturas(sedeTrainerSelect.value);
@@ -85,9 +77,9 @@ sedeTrainerSelect.addEventListener("click",(e)=>{
 function listarTeams(sede) {
     const etiquetaTrainers = document.querySelector("#teamsT");
     etiquetaTrainers.innerHTML = null;
-    for (let [k,v] of Object.entries(campus[sede]["team"])) {
+    for (let [k, v] of Object.entries(campus[sede]["team"])) {
         //console.log(v.nombre);
-        etiquetaTrainers.insertAdjacentHTML("beforeend",`
+        etiquetaTrainers.insertAdjacentHTML("beforeend", `
         <option value="${v.nombre}">${v.nombre} | ${v.jornada} | horario ${v.horario} </option> 
         `)
     }
@@ -97,21 +89,19 @@ function listarTeams(sede) {
 function listarAsignaturas(sede) {
     const asignaturaTrainer = document.querySelector("#materiaT");
     asignaturaTrainer.innerHTML = null;
-    for(let [k,v] of Object.entries(campus[sede]["asignaturas"])){
-        asignaturaTrainer.insertAdjacentHTML("beforeend",`
-        <option value="${[v.nombre,v.modalidad]}">${v.nombre} - ${v.modalidad}</option> 
+    for (let [k, v] of Object.entries(campus[sede]["asignaturas"])) {
+        asignaturaTrainer.insertAdjacentHTML("beforeend", `
+        <option value="${[v.nombre, v.modalidad]}">${v.nombre} - ${v.modalidad}</option> 
         `)
     }
 }
-
-
 
 
 /* 
 |   Registrar un trainer 
 */
 const formTrainers = document.querySelector("#trainer");
-formTrainers.addEventListener('submit',(e)=>{
+formTrainers.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target));
     campus[`${data.sedeT}`]["trainers"].push(data);
@@ -122,7 +112,7 @@ formTrainers.addEventListener('submit',(e)=>{
 // teams para campers
 const selectSedeCamper = document.querySelector("#cpSedes");
 //console.log(selectSedeCamper);
-selectSedeCamper.addEventListener('click',(e)=>{
+selectSedeCamper.addEventListener('click', (e) => {
     e.preventDefault();
     listarTeamsC(selectSedeCamper.value);
 })
@@ -131,8 +121,8 @@ selectSedeCamper.addEventListener('click',(e)=>{
 function listarTeamsC(sede) {
     const etiqueta = document.querySelector("#teamsC");
     etiqueta.innerHTML = null;
-    for (let [k,v] of Object.entries(campus[sede]["team"])) {
-        etiqueta.insertAdjacentHTML("beforeend",`
+    for (let [k, v] of Object.entries(campus[sede]["team"])) {
+        etiqueta.insertAdjacentHTML("beforeend", `
         <option value="${v.nombre}">${v.nombre} | ${v.jornada} | horario ${v.horario} </option> 
         `)
     }
@@ -140,7 +130,7 @@ function listarTeamsC(sede) {
 
 // Regitrar un camper 
 const formCampers = document.querySelector("#camper");
-formCampers.addEventListener('submit',(e)=>{
+formCampers.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target))
     campus[`${data.sedeC}`]['campers'].push(data);
@@ -150,55 +140,50 @@ formCampers.addEventListener('submit',(e)=>{
 
 });
 
-
 //===========================================================================================================
 //consultas
 
 const consulta1 = document.querySelector("#consulta1");
 //console.log(consulta1);
-consulta1.addEventListener("click",(e)=>{
+consulta1.addEventListener("click", (e) => {
     e.preventDefault();
     const sedeConsulta = document.querySelector("#conSedes").value;
-    consultaUno(sedeConsulta);    
+    consultaUno(sedeConsulta);
 })
 
 function consultaUno(sede) {
-    console.log("       --TRAINERS--\n"); 
-    campus[sede]['trainers'].forEach( element => {
-        const { nombre, asignatura } = element; 
+    console.log("       --TRAINERS--\n");
+    campus[sede]['trainers'].forEach(element => {
+        const { nombre, asignatura } = element;
         console.log(`Trainer: ${nombre} | Asignatura: ${asignatura}`);
     });
 
-    console.log("       --CAMPERS--\n"); 
-    campus[sede]['campers'].forEach( element => {
-        const { nombre, salon } = element; 
+    console.log("       --CAMPERS--\n");
+    campus[sede]['campers'].forEach(element => {
+        const { nombre, salon } = element;
         console.log(`Camper: ${nombre} | Salon: ${salon}`);
     });
-
 }
 
-const consulta2 = document.querySelector("#consulta2"); 
-consulta2.addEventListener("click",(e)=>{
+const consulta2 = document.querySelector("#consulta2");
+consulta2.addEventListener("click", (e) => {
     e.preventDefault();
-    try {     
-        console.log("Telefono de Sede Medellin: ",campus.Medellin.contacto);
-        console.log("\nDireccion de Sede Bucaramanga: ",campus.Bucaramanga.direccion);
+    try {
+        console.log("Telefono de Sede Medellin: ", campus.Medellin.contacto);
+        console.log("\nDireccion de Sede Bucaramanga: ", campus.Bucaramanga.direccion);
     } catch (error) {
         console.log("La sede no esta registrada");
     }
 })
 
-
 const consulta3 = document.querySelector("#consulta3");
-consulta3.addEventListener("click",(e)=>{
+consulta3.addEventListener("click", (e) => {
     e.preventDefault();
     const sedeConsulta = document.querySelector("#conSedes").value;
     consultaTres(sedeConsulta);
 })
 
-
 function consultaTres(sede) {
-    
     campus[sede]['asignaturas'].forEach(element => {
         console.table(element);
     })

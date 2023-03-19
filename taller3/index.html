@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,33 +9,35 @@
     <title>Document</title>
 
     <style>
-
-        .container{
-            display: flex; justify-content: center;
+        .container {
+            display: flex;
+            justify-content: center;
         }
-        .contenido{
+
+        .contenido {
             width: 500px;
             text-align: center;
             background-color: rgb(180, 248, 248);
         }
     </style>
 </head>
+
 <body>
-    
+
     <div class="container">
         <div class="contenido">
 
             <!--  Formulario para registro de sedes -->
             <fieldset>
-                <legend >REGISTRAR SEDE CAMPUS</legend>
+                <legend>REGISTRAR SEDE CAMPUS</legend>
                 <form id="sede">
                     <br>
-                    <label for="nsede">Nombre de la sede:</label><br>         
+                    <label for="nsede">Nombre de la sede:</label><br>
                     <input type="text" name="nombre" id="nsede"><br><br>
                     <label for="dirS">Direccion de la sede:</label><br>
-                    <input type="text" name="direccion" id="dirS" ><br><br>
+                    <input type="text" name="direccion" id="dirS"><br><br>
                     <label for="conS">Contacto de la sede:</label><br>
-                    <input type="text" name="contacto" id="conS" ><br><br>
+                    <input type="text" name="contacto" id="conS"><br><br>
                     <input type="submit" value="Guardar">
                 </form>
             </fieldset>
@@ -45,20 +48,20 @@
                 <legend>REGISTRAR TEAM'S</legend>
                 <form id="team">
                     <br>
-                    <label for="tsedes">Sede a la que Pertenecera:</label><br>        
+                    <label for="tsedes">Sede a la que Pertenecera:</label><br>
                     <select name="sede" id="tsedes">
                         <!-- <option value=""></option> -->
                     </select><br><br>
                     <label for="dirS">Nombre del Team que va a Registrar:</label><br>
-                    <input type="text" name="nombre" id="teamNom" ><br><br>
+                    <input type="text" name="nombre" id="teamNom"><br><br>
                     <label for="jornada">Jornada de Clases:</label><br>
                     <select name="jornada" id="Jornada">
-                        <option selected >seleccione uno</option>
-                        <option value="Mañana" >Mañana</option>
-                        <option value="Tarde" >Tarde</option>
+                        <option selected>seleccione uno</option>
+                        <option value="Mañana">Mañana</option>
+                        <option value="Tarde">Tarde</option>
                     </select>
                     <br><br>
-                    <input type="radio" name="horario" id="grupo1" value="A" >
+                    <input type="radio" name="horario" id="grupo1" value="A">
                     <label for="grupo1">Horario 1</label>
                     <input type="radio" name="horario" id="grupo2" value="B">
                     <label for="grupo2">Horario 2</label>
@@ -70,18 +73,20 @@
 
             <!--  Formulario para registro de Asignaturas -->
             <fieldset>
-                <legend >REGISTRAR ASIGNATURA</legend><br>
+                <legend>REGISTRAR ASIGNATURA</legend><br>
                 <form id="asignaturaf">
-                    <label for="asedes">Sede a la que Pertenecera:</label><br>        
+                    <label for="asedes">Sede a la que Pertenecera:</label><br>
                     <select name="sede" id="asedes">
                         <!-- <option value=""></option> -->
                     </select><br>
                     <br>
-                    <label for="nombre">Nombre Asignatura:</label><br>         
+                    <label for="nombre">Nombre Asignatura:</label><br>
                     <input type="text" name="nombre" id="nsede"><br>
                     <div class="modalida">
-                        <input type="radio" name="modalidad" id="presencial" value="Presencial"><label for="">Presencial</label><br>
-                        <input type="radio" name="modalidad" id="remoto" value="Remoto"><label for="">Remoto</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="modalidad" id="presencial" value="Presencial"><label
+                            for="">Presencial</label><br>
+                        <input type="radio" name="modalidad" id="remoto" value="Remoto"><label
+                            for="">Remoto</label>&nbsp;&nbsp;&nbsp;&nbsp;
                     </div>
                     <br>
                     <label for="sandbox"> Sanbox:</label><br>
@@ -91,7 +96,7 @@
                     <label for="preReg">Prerrequisitos:</label><br>
                     <textarea name="prerrequisitos" id="preReg" cols="28" rows="4"></textarea><br><br>
                     <input type="submit" value="Guardar">
-                   
+
                 </form>
             </fieldset>
             <br>
@@ -118,8 +123,8 @@
                     <select name="asignatura" id="materiaT">
                         <option value="">--seleccione--</option>
                     </select>
-                    
-                   <br><br>
+
+                    <br><br>
                     <label for="teamsT">Seleccione el Team:</label><br>
                     <select name="teams" id="teamsT">
                         <option value="">--seleccione--</option>
@@ -143,24 +148,29 @@
                     <input type="text" name="telefono" id="Ctelefono"><br><br>
                     <label for="Cemail">Ingrese el Email:</label><br>
                     <input type="text" name="email" id="Cemail"><br><br>
-                        
+
                     <label for="Cdireccion">Ingrese la Dirección:</label><br>
                     <input type="text" name="direccion" id="Cdireccion"><br><br>
 
-                    <div class="radioGrup" >
+                    <div class="radioGrup">
                         <label for="nivel">Nivel:</label>
                         <br>
-                        <input type="radio" name="nivel" id="basico" value="Basico"><label for="">Basico</label>&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="nivel" id="medio" value="Medio"><label for="">Medio</label>&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="nivel" id="basico" value="Basico"><label
+                            for="">Basico</label>&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="nivel" id="medio" value="Medio"><label
+                            for="">Medio</label>&nbsp;&nbsp;&nbsp;
                         <input type="radio" name="nivel" id="avanzado" value="Avanzado"><label for="">Avanzado</label>
                     </div>
                     <br><br>
-                    <div class="radioGrup" >
+                    <div class="radioGrup">
                         <label for="transporte">Transporte:</label>
                         <br>
-                        <input type="radio" name="transporte" id="moto" value="moto"><label for="">Moto</label>&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="transporte" id="carro" value="carro"><label for="">Carro</label>&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="transporte" id="otros" value="otros"><label for="">Otros</label><br><br>
+                        <input type="radio" name="transporte" id="moto" value="moto"><label
+                            for="">Moto</label>&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="transporte" id="carro" value="carro"><label
+                            for="">Carro</label>&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="transporte" id="otros" value="otros"><label
+                            for="">Otros</label><br><br>
                     </div>
                     <label for="teamsT">Seleccione el Team:</label><br>
                     <select name="teams" id="teamsC">
@@ -182,8 +192,8 @@
                 <legend>CONSULTAS DISPONIBLES</legend><br>
 
                 <label for="cpSedes">Seleccione la sede a la que Pertenecerá:</label><br>
-                    <select name="sedeCn" id="conSedes">
-                        <!-- <option value="0" selected>seleccione</option> -->
+                <select name="sedeCn" id="conSedes">
+                    <!-- <option value="0" selected>seleccione</option> -->
                 </select><br><br>
 
                 <label for="">De los trainers, reportar si la asignatura (tecnología) es
@@ -196,12 +206,12 @@
             <fieldset>
                 <label for="">El teléfono de la sede de Medellín y la dirección de la
                     sede de Bucaramanga</label><br>
-                <input type="button" value="Consultar"  id="consulta2"><br><hr>
-
+                <input type="button" value="Consultar" id="consulta2"><br>
             </fieldset>
-        </div> 
+        </div>
     </div>
-        
+
 
 </body>
+
 </html>
