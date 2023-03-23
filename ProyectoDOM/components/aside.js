@@ -80,11 +80,11 @@ export default {
             ]
         },
         {
-            title: "Contacto Admin",
+            title: "Repositorio del Kernel",
             links: [
                 {
-                    name: "Git hub",
-                    href: "https://github.com/paleto30"
+                    name: "Git hub ",
+                    href: "https://github.com/torvalds/linux"
                 }
             ]
         },

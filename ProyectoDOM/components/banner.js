@@ -1,6 +1,6 @@
 export default{
 
-    image: "/assets/img/banner.jpg",
+    image: "./assets/img/banner.jpg",
     h1: "Linux® es un sistema operativo (SO) open source.",
     p: " El sistema operativo es el software que gestiona directamente el hardware de un sistema y sus recursos, como la CPU, la memoria y el almacenamiento. Se encuentra entre las aplicaciones y el hardware, y establece las conexiones entre todos los sistemas de software y los recursos físicos que ejecutan las tareas.",
     more:{
