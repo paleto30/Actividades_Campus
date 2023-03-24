@@ -80,10 +80,10 @@ export default {
             ]
         },
         {
-            title: "Repositorio del Kernel",
+            title: "Repositorio del Kernel Linux",
             links: [
                 {
-                    name: "Git hub ",
+                    name: "Git hub: Kernel Linux",
                     href: "https://github.com/torvalds/linux"
                 }
             ]
@@ -111,7 +111,7 @@ export default {
         `
     },
 
-    archive (element){
+    archive(element){
         return `
         <div class="p-4">
         <h4 class="fst-italic">${element.title}</h4>
