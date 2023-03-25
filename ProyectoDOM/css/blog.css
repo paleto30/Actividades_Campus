@@ -131,3 +131,26 @@ h1, h2, h3, h4, h5, h6 {
   height: 250px;
   object-fit: cover;
 }
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #797d80 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 13px;
+    height: 11px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #08548f;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
