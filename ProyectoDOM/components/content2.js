@@ -66,7 +66,8 @@ export default{
         "% Para Tareas Comunes": 0.4,
         "Usuarios  desarrollo": 240000,
         "Usuarios Tareas comunes": 160000
-      }
+      },
+      
    ],
 
    showInfo(){
@@ -97,7 +98,6 @@ export default{
         </tr>
         `;
     }); 
-     console.log(data);
      document.querySelector("#tablaB").insertAdjacentHTML("beforeend",data.join(" "));
     
    }

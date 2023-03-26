@@ -4,6 +4,7 @@ import cards from "./components/cards.js";
 import aside from "./components/aside.js";
 import content from "./components/content.js";
 import content2 from "./components/content2.js";
+import content3 from "./components/content3.js";
 
 // todo lo del encabezado, navbar, banner, y cards de distros
 header.listTile();
@@ -26,5 +27,9 @@ content.bloqueDos();
 content.bloqueTres()
 
 
-// contenido del articulo 2
+// contenido del articulo 1
 content2.showInfo();
+
+
+// contenido del articulo 2
+content3.showInfos();
