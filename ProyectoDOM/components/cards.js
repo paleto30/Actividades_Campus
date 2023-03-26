@@ -1,5 +1,4 @@
 export default {
-
     data:[
         {
             use: "Sistema Operativo",
@@ -64,6 +63,4 @@ export default {
         });
         document.querySelector(".cardsSystems").insertAdjacentHTML("beforeend",html);
     }
-
-
 }

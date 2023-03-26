@@ -83,12 +83,10 @@ export default {
 
     },
     showNotice() {
-        document.querySelector("#content").insertAdjacentHTML("afterbegin",
-            `
+        document.querySelector("#content").insertAdjacentHTML("afterbegin",`
             <h3 class="pb-4 mb-4 fst-italic border-bottom">${this.notice.text}</h3>
         `)
     },
-
     bloqueUno() {
         let data = this.article1.bloque_uno.map((val, id) => {
             return `
@@ -102,7 +100,6 @@ export default {
         })
         document.querySelector("#bloqueUno").insertAdjacentHTML("afterbegin", data.join(""))
     },
-
     bloqueDos() {
         let data = `
             <h2>${this.article1.bloque_dos.title}</h2>
@@ -118,11 +115,8 @@ export default {
             `;
         document.querySelector("#bloqueDos").insertAdjacentHTML("afterbegin", data)
     },
-
-
     bloqueTres(){
-        document.querySelector("#bloqueTres").insertAdjacentHTML("beforeend",
-        `
+        document.querySelector("#bloqueTres").insertAdjacentHTML("beforeend",`
         <h2>${this.article1.bloque_tres.seccion.title}</h2>
         <p><strong>Ventajas:</strong></p>
         `);
@@ -134,7 +128,6 @@ export default {
                 `        
         })
         document.querySelector("#bloqueTres").insertAdjacentHTML("beforeend",dataV.join(" "))
-        
         let dataD = this.article1.bloque_tres.desventaja.map(elemen =>{
             return `
             <ul>

@@ -1,6 +1,4 @@
 export default{
-
-
    parteUno:{
         title:"Sistemas Linux más utilizados en la actualidad",
         date: "Marzo 25, 2023 by",
@@ -69,10 +67,8 @@ export default{
       },
       
    ],
-
    showInfo(){
-    document.querySelector("#intro").insertAdjacentHTML("beforeend",
-        `
+    document.querySelector("#intro").insertAdjacentHTML("beforeend",`
         <h2 class="blog-post-title">${this.parteUno.title}</h2>
         <p class="blog-post-meta">${this.parteUno.date} <a target="_blank" href="${this.parteUno.author.href}">${this.parteUno.author.name}</a></p>
         <p>${this.parteUno.text}</p>
@@ -85,7 +81,6 @@ export default{
         `
     }) 
     document.querySelector("#tablaH").insertAdjacentHTML("beforeend",ths.join(" "));
-
     let data = this.tabla.map((v,k)=>{
         return `
         <tr>
@@ -99,7 +94,5 @@ export default{
         `;
     }); 
      document.querySelector("#tablaB").insertAdjacentHTML("beforeend",data.join(" "));
-    
    }
-
 }
