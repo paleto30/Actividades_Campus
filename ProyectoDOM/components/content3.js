@@ -1,5 +1,4 @@
 export default{
-
     post:{
         title:"Linux 6.0 algunas mejoras y características nuevas",
         intro:"El 2 de octubre de 2022, Linus Torvalds anunció Linux 6.0 como una actualización con muchos cambios, especialmente en lo que respecta al número de commits. Aunque especificó que un cambio de número de versión principal no implica necesariamente grandes cambios fundamentales. El kernel Linux 6.0 trae diversas mejoras de rendimiento, soporte para nuevo hardware y parches de seguridad, entre otras cosas. Esta nueva versión principal es la sucesora de la serie Linux 5.x.y, cuya última versión es Linux 5.19.",
@@ -52,26 +51,17 @@ export default{
             ]
         }
     },
-
-
     showInfos(){
-
-        document.querySelector("#articulo2").insertAdjacentHTML("afterbegin",
-        `
+        document.querySelector("#articulo2").insertAdjacentHTML("afterbegin",`
             <h2 class="blog-post-title">${this.post.title}</h2>
             <p class="blog-post-meta">${this.post.by.date} by <a target="_blank" href="${this.post.by.href}">${this.post.by.author}</a></p>
             <p>${this.post.intro}</p>
         `)
-
         let data = this.post.new.feature.map((v,k)=>{
             return `
             <li>${v.text}</li>
             `
         })
         document.querySelector("#features").insertAdjacentHTML("afterbegin",data.join(" ")); 
-
-        
     }
-
-
 }

@@ -1,5 +1,4 @@
 export default {
-
     title: {
         name: "GNU / LINUIX",
         href: "https://www.gnu.org/gnu/linux-and-gnu.es.html"
@@ -46,9 +45,8 @@ export default {
     listDistro(){
         let plantilla = "";
         this.distros.forEach(element => {
-            plantilla += `<a class="p-2 link-secondary" target="_blank" href="${element.href}">${element.name}</a>`
+            plantilla += `<a class="p-2 link-secondary itemss" target="_blank" href="${element.href}">${element.name}</a>`
         });
         document.querySelector("#menu").insertAdjacentHTML("beforeend",plantilla);
-    },
-    
+    }, 
 }
