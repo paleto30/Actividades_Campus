@@ -8,8 +8,9 @@ import content3 from "./components/content3.js";
 import footer from "./components/footer.js";
 
 // todo lo del encabezado, navbar, banner, y cards de distros
-header.listTile();
-header.listDistro();
+header.fragmenShow()
+//header.listTile();
+//header.listDistro();
 banner.listBanner();
 cards.listCards();
 
