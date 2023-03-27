@@ -1,4 +1,3 @@
-
 let wsMyHeader = {
 
     listTile(title){
@@ -14,11 +13,9 @@ let wsMyHeader = {
     },
 
     
-
-
 }
 
-
+// respuesta 
 self.addEventListener("message",(e)=>{
-    postMessage(wsMyHeader[`${e.data.module}`](e.data.data))
+    postMessage(wsMyHeader[`${e.data.module}`](e.data.data));
 })

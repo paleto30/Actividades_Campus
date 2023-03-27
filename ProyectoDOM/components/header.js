@@ -37,28 +37,19 @@ export default {
             href: "https://www.kali.org/"
         }
     ],
-    /* listTile(){
-        document.querySelector("#title").insertAdjacentHTML("beforeend",
-        `<a class="blog-header-logo text-dark" target="_blank" href="${this.title.href}">${this.title.name}</a>`
-        )
-    }, */
     fragmenShow(){
-        const ws = new Worker("./storage/wsMyHeader.js",{type:"module"});
+        const ws = new Worker("storage/wsMyHeader.js",{type:"module"});
         //enviamos un mensaje al worker
-        // le estamos enviando el nombre del modulo y los datos de distros
-        
-        let select = ["#title","#menu"]; 
+        // le estamos enviando el nombre del modulo y los datos de distros   
         let count = 0;
         ws.postMessage({module:"listTile", data:this.title});
         ws.postMessage({module:"listDistro", data:this.distros});
-        
-        // recibimos el retorno del worker
+        let select = ["#title","#menu"];
+        // devuelve el worker
         ws.addEventListener("message",(e)=>{
-
-            let doc = new DOMParser().parseFromString(e.data, "text/html");
-            document.querySelector(select[count]).append(...doc.body.children)
-            (select.length-1 == count) ? ws.terminate() : count++
-
+            let doc = new DOMParser().parseFromString(e.data, "text/html").body;
+            document.querySelector(`${select[count]}`).append(...doc.children);
+            (select.length-1==count) ? ws.terminate() : count++;
         })
     }
 }
