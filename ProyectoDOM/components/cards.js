@@ -36,7 +36,7 @@ export default {
             use: "Sistema Operativo",
             featured:"Kali Linux",
             date: "21 mar",
-            text: "Kali Linux es una distribución de Linux orientada a diversas tareas de seguridad de la información, como pruebas de penetración, investigación de seguridad, informática forense e ingeniería inversa.",
+            text: "Distribución de Linux orientada a diversas tareas de seguridad de la información, como pruebas de penetración, investigación de seguridad, informática forense e ingeniería inversa.",
             more: "https://www.kali.org",
             image: "./assets/img/kalitools.jpg",
         },
