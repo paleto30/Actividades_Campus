@@ -41,26 +41,14 @@ export default {
             image: "./assets/img/kalitools.jpg",
         },
     ],   
-    listCards(){
-        let html = "";
-        this.data.forEach(e => {
-            html += `
-            <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" id="cards">
-              <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">${e.use}</strong>
-                <h3 class="mb-0">${e.featured}</h3>
-                <div class="mb-1 text-muted">${e.date}</div>
-                <p class="card-text mb-auto">${e.text}</p>
-                <a href="${e.more}" class="stretched-link" target="_blank" >Leer mas</a>
-              </div>
-              <div class="col-auto d-none d-lg-block">
-                <img src="${e.image}" class="postImg" >
-              </div>
-            </div>
-          </div>
-            `
-        });
-        document.querySelector(".cardsSystems").insertAdjacentHTML("beforeend",html);
-    }
+    showRenderWorker(){
+
+        const ws = new Worker('storage/wsMyCards.js',{type:"module"})
+        ws.postMessage({module:"listCards",data:this.data})
+
+        ws.addEventListener("message",(e)=>{
+            let doc = new DOMParser().parseFromString(e.data,"text/html").body;
+            document.querySelector(".cardsSystems").append(...doc.children);
+        })
+    }   
 }
