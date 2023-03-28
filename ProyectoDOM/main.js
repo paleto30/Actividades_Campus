@@ -18,24 +18,24 @@ aside.renderWorkerData(); // -> renderizaciond del aside con el worker
 
 
 
-
+content.renderWorkerData();
 
 // contenido del body desde seccion de noticias
-content.showNotice();
+//content.showNotice();
 // Primer bloque 
-content.bloqueUno();
+//content.bloqueUno();
 //segundo bloque
-content.bloqueDos();
+//content.bloqueDos();
 // tercer bloque
-content.bloqueTres()
+//content.bloqueTres()
 
 
 
-// contenido del articulo 1
+/* // contenido del articulo 1
 content2.showInfo();
 
 // contenido del articulo 2
 content3.showInfos();
 
 //footer
-footer.showData();
+footer.showData(); */
