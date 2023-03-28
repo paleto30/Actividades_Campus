@@ -82,7 +82,20 @@ export default {
         }
 
     },
-    showNotice() {
+
+    renderWorkerData(){
+        const ws = new Worker('storage/wsMyContent.js',{type:"module"});
+        
+        let con = 0;
+        let id = ["#content","#bloqueUno","#bloqueDos","#bloqueTres"] 
+        ws.postMessage({module:"showNotice",data:this.notice});
+        ws.addEventListener("message",(e) =>{
+            let doc = new DOMParser().parseFromString(e.data, "text/html").body;
+            
+        })
+    },
+
+    /* showNotice() {
         document.querySelector("#content").insertAdjacentHTML("afterbegin",`
             <h3 class="pb-4 mb-4 fst-italic border-bottom">${this.notice.text}</h3>
         `)
@@ -137,7 +150,7 @@ export default {
         })
         document.querySelector("#bloqueTres").insertAdjacentHTML("beforeend",`<p><strong>Desventajas:</strong></p>`)
         document.querySelector("#bloqueTres").insertAdjacentHTML("beforeend",dataD.join(" "));
-    }
+    } */
 
 }
 
