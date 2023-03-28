@@ -1,9 +1,7 @@
 let wsMyHeader = {
-
     listTile(title){
         return `<a class="blog-header-logo text-dark" target="_blank" href="${title.href}">${title.name}</a>`
     },
-
     listDistro(distros){
         let plantilla = "";
         distros.forEach(element => {
@@ -11,8 +9,6 @@ let wsMyHeader = {
         });
         return plantilla;
     },
-
-    
 }
 
 // respuesta 
