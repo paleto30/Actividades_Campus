@@ -95,6 +95,7 @@ export default {
         ws.addEventListener("message",(e)=>{
             let doc = new DOMParser().parseFromString(e.data,"text/html").body;
             document.querySelector("#nav").append(...doc.children);
+            ws.terminate();
         })
     }
 
