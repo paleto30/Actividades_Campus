@@ -7,15 +7,17 @@ import content2 from "./components/content2.js";
 import content3 from "./components/content3.js";
 import footer from "./components/footer.js";
 
-// todo lo del encabezado, navbar, banner, y cards de distros
-header.fragmenShow()
-//header.listTile();
-//header.listDistro();
-banner.listBanner();
-cards.listCards();
 
-// menu de la barra lateral derecha
-aside.showAside();
+header.fragmenShow() //-> renderizacion de el header con worker
+
+banner.listBanner(); // -> renderizacion de  el banner
+
+cards.showRenderWorker(); // -> renderizacion de las cards con worker
+
+aside.renderWorkerData(); // -> renderizaciond del aside con el worker
+
+
+
 
 
 // contenido del body desde seccion de noticias
@@ -26,6 +28,8 @@ content.bloqueUno();
 content.bloqueDos();
 // tercer bloque
 content.bloqueTres()
+
+
 
 // contenido del articulo 1
 content2.showInfo();
