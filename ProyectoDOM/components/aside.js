@@ -89,37 +89,13 @@ export default {
             ]
         },
     ],
-
-    showAside(){
-        const data = this.nav.map((val,id)=>{
-            return (
-                (val.links)
-                ? this.archive(val)
-                : this.cards(val)
-            )
-        });
-        document.querySelector("#nav").insertAdjacentHTML("beforeend",data.join(""));
-
-    },
-
-    cards(element){
-        return `
-        <div class="p-4 mb-3 bg-light rounded">
-            <h4 class="fst-italic">${element.title}</h4>
-            <p class="mb-0">${element.text}</p>
-        </div>
-        `
-    },
-
-    archive(element){
-        return `
-        <div class="p-4">
-        <h4 class="fst-italic">${element.title}</h4>
-        <ol class="list-unstyled mb-0">
-            ${element.links.map((val,id) => `<li><a target="_blank" href="${val.href}">${val.name}</a></li>`).join("")} 
-        </ol>
-      </div>
-        `
+    renderWorkerData(){  
+        const ws = new Worker('storage/wsMyAside.js',{type:"module"});
+        ws.postMessage({module:"showAside", data:this.nav});
+        ws.addEventListener("message",(e)=>{
+            let doc = new DOMParser().parseFromString(e.data,"text/html").body;
+            document.querySelector("#nav").append(...doc.children);
+        })
     }
 
 }
