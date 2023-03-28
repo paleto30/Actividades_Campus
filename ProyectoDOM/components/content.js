@@ -89,9 +89,12 @@ export default {
         let con = 0;
         let id = ["#content","#bloqueUno","#bloqueDos","#bloqueTres"] 
         ws.postMessage({module:"showNotice",data:this.notice});
+        ws.postMessage({module:"bloqueUno",data:this.article1.bloque_uno});
+        
         ws.addEventListener("message",(e) =>{
             let doc = new DOMParser().parseFromString(e.data, "text/html").body;
-            
+            document.querySelector("#content").append(...doc.children);
+
         })
     },
 

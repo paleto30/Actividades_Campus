@@ -6,7 +6,7 @@ let wsMyContent = {
             <h3 class="pb-4 mb-4 fst-italic border-bottom">${params.text}</h3>
         `
     },
-   /*  bloqueUno(params) {
+     bloqueUno(params) {
         let data = params.bloque_uno.map((val, id) => {
             return `
             <h2 class="blog-post-title">${val.title}</h2>
@@ -18,7 +18,7 @@ let wsMyContent = {
             `
         })
         return data.join("");
-    }, */
+    }, 
 
 } 
 
