@@ -1,16 +1,8 @@
+import config from "../storage/config.js";
 export default{
-    data:{
-        creator:{
-            text:"Blog Creado por ",
-            author:{
-                name:"Andres F Galvis",
-                href:"https://github.com/paleto30"
-            }
-        },
-        copy:"Copyright © todos los derechos reservados",
-        topPage:"Regresar Arriba"
-    },
     renderWorkerData(){
+        config.dataMyFooter();
+        Object.assign(this, JSON.parse(localStorage.getItem("myFooter")));
         const ws = new Worker("storage/wsMyFooter.js", {type:"module"});
         ws.postMessage(this.data);
         ws.addEventListener("message",(e)=>{
