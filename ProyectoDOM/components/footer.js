@@ -10,12 +10,12 @@ export default{
         copy:"Copyright © todos los derechos reservados",
         topPage:"Regresar Arriba"
     },
-    showData(){
-        let data = `
-        <p><a href="#">${this.data.topPage}</a></p>
-        <p>${this.data.creator.text}<a target="_blank" href="${this.data.creator.author.href}">${this.data.creator.author.name}</a></p>
-        <p>${this.data.copy}</p>
-        `;
-        document.querySelector("#pies").insertAdjacentHTML("beforeend",data)
+    renderWorkerData(){
+        const ws = new Worker("storage/wsMyFooter.js", {type:"module"});
+        ws.postMessage(this.data);
+        ws.addEventListener("message",(e)=>{
+            document.querySelector("#pies").insertAdjacentHTML("beforeend",e.data);
+            ws.terminate();
+        })
     }
 }
