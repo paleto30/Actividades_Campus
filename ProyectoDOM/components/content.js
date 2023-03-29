@@ -85,75 +85,15 @@ export default {
 
     renderWorkerData(){
         const ws = new Worker('storage/wsMyContent.js',{type:"module"});
-        
-        let con = 0;
-        let id = ["#content","#bloqueUno","#bloqueDos","#bloqueTres"] 
-        ws.postMessage({module:"showNotice",data:this.notice});
-        ws.postMessage({module:"bloqueUno",data:this.article1.bloque_uno});
-        
+        let data =[this.notice, this.article1] 
+        ws.postMessage({data:data}); 
         ws.addEventListener("message",(e) =>{
-            let doc = new DOMParser().parseFromString(e.data, "text/html").body;
-            document.querySelector("#content").append(...doc.children);
-
+            let {noticia, bloque1, bloque2, bloque3} = e.data;
+            document.querySelector("#content").insertAdjacentHTML("beforeend",noticia);
+            document.querySelector("#bloqueUno").insertAdjacentHTML("beforeend",bloque1);
+            document.querySelector("#bloqueDos").insertAdjacentHTML("beforeend",bloque2);
+            document.querySelector("#bloqueTres").insertAdjacentHTML("beforeend",`${bloque3.title}${(bloque3.dataV).join("")}${(bloque3.title2)}${(bloque3.dataD).join("")}`)
         })
     },
-
-    /* showNotice() {
-        document.querySelector("#content").insertAdjacentHTML("afterbegin",`
-            <h3 class="pb-4 mb-4 fst-italic border-bottom">${this.notice.text}</h3>
-        `)
-    },
-    bloqueUno() {
-        let data = this.article1.bloque_uno.map((val, id) => {
-            return `
-            <h2 class="blog-post-title">${val.title}</h2>
-            <p class="blog-post-meta">${val.date} <a target="_blank" href="${val.href}">${val.author}</a></p>
-            <p>${val.text}</p>
-            <p>${val.resume}</p>
-            <img src="${val.img}" class="img-fluid">
-            <hr>
-            `
-        })
-        document.querySelector("#bloqueUno").insertAdjacentHTML("afterbegin", data.join(""))
-    },
-    bloqueDos() {
-        let data = `
-            <h2>${this.article1.bloque_dos.title}</h2>
-            <div style="display: flex; justify-content: center;">
-              <img src="${this.article1.bloque_dos.img}" class="img-fluid" width="400px">
-            </div><br>
-            <blockquote class="blockquote">
-              <p>${this.article1.bloque_dos.block}</p>
-            </blockquote>
-            <p style="text-align: justify;">${this.article1.bloque_dos.p1} <br><br>
-                ${this.article1.bloque_dos.p2} <br><br> ${this.article1.bloque_dos.p3}
-            </p>
-            `;
-        document.querySelector("#bloqueDos").insertAdjacentHTML("afterbegin", data)
-    },
-    bloqueTres(){
-        document.querySelector("#bloqueTres").insertAdjacentHTML("beforeend",`
-        <h2>${this.article1.bloque_tres.seccion.title}</h2>
-        <p><strong>Ventajas:</strong></p>
-        `);
-        let dataV = this.article1.bloque_tres.ventajas.map(elemen =>{
-                return `
-                <ul>
-                    <li><strong> ${elemen.ventage}:</strong> ${elemen.explained}</li>
-                </ul>
-                `        
-        })
-        document.querySelector("#bloqueTres").insertAdjacentHTML("beforeend",dataV.join(" "))
-        let dataD = this.article1.bloque_tres.desventaja.map(elemen =>{
-            return `
-            <ul>
-                <li><strong> ${elemen.disadventage}:</strong> ${elemen.explained}</li>
-            </ul>
-            `
-        })
-        document.querySelector("#bloqueTres").insertAdjacentHTML("beforeend",`<p><strong>Desventajas:</strong></p>`)
-        document.querySelector("#bloqueTres").insertAdjacentHTML("beforeend",dataD.join(" "));
-    } */
-
 }
 
