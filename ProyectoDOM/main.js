@@ -8,9 +8,8 @@ import content3 from "./components/content3.js";
 import footer from "./components/footer.js"; 
 
 
-
 header.fragmenShow() //-> renderizacion de el header con worker
-banner.listBanner(); // -> renderizacion de  el banner
+banner.renderWorkerData(); // -> renderizacion de  el banner con el worker
 cards.showRenderWorker(); // -> renderizacion de las cards con worker
 aside.renderWorkerData(); // -> renderizaciond del aside con el worker
 content.renderWorkerData(); // -> renderizacion del content con el worker
