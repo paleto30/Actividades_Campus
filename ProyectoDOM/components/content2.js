@@ -67,32 +67,15 @@ export default{
       },
       
    ],
-   showInfo(){
-    document.querySelector("#intro").insertAdjacentHTML("beforeend",`
-        <h2 class="blog-post-title">${this.parteUno.title}</h2>
-        <p class="blog-post-meta">${this.parteUno.date} <a target="_blank" href="${this.parteUno.author.href}">${this.parteUno.author.name}</a></p>
-        <p>${this.parteUno.text}</p>
-        `
-    );
-    const claves = Object.keys(this.tabla[0]) 
-    let ths = claves.map(element=>{
-        return `
-            <th>${element}</th>
-        `
-    }) 
-    document.querySelector("#tablaH").insertAdjacentHTML("beforeend",ths.join(" "));
-    let data = this.tabla.map((v,k)=>{
-        return `
-        <tr>
-            <td>${v["Sistema Linux"]}</td>
-            <td>${v["Cantidad de usuarios aproximados"]}</td>
-            <td>${v["% Para Desarrollo"]*100}%</td>
-            <td>${v["% Para Tareas Comunes"]*100}%</td>
-            <td>${v["Usuarios  desarrollo"]}</td>
-            <td>${v["Usuarios Tareas comunes"]}</td>
-        </tr>
-        `;
-    }); 
-     document.querySelector("#tablaB").insertAdjacentHTML("beforeend",data.join(" "));
-   }
+   renderWorkerData(){
+      const ws = new Worker('storage/wsMyContent2.js',{type:"module"});
+      let data = [this.parteUno,this.tabla];
+      ws.postMessage({datos:data});
+      ws.addEventListener("message",(e)=>{
+        let {part1, ths, data} = e.data;
+        document.querySelector("#intro").insertAdjacentHTML("beforeend",part1); 
+        document.querySelector("#tablaH").insertAdjacentHTML("beforeend",ths.join(""));
+        document.querySelector("#tablaB").insertAdjacentHTML("beforeend",data.join(""));      
+      });
+    },
 }
