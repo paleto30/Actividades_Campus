@@ -75,7 +75,8 @@ export default{
         let {part1, ths, data} = e.data;
         document.querySelector("#intro").insertAdjacentHTML("beforeend",part1); 
         document.querySelector("#tablaH").insertAdjacentHTML("beforeend",ths.join(""));
-        document.querySelector("#tablaB").insertAdjacentHTML("beforeend",data.join(""));      
+        document.querySelector("#tablaB").insertAdjacentHTML("beforeend",data.join(""));  
+        ws.terminate();    
       });
     },
 }

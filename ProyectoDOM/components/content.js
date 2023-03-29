@@ -92,7 +92,8 @@ export default {
             document.querySelector("#content").insertAdjacentHTML("beforeend",noticia);
             document.querySelector("#bloqueUno").insertAdjacentHTML("beforeend",bloque1);
             document.querySelector("#bloqueDos").insertAdjacentHTML("beforeend",bloque2);
-            document.querySelector("#bloqueTres").insertAdjacentHTML("beforeend",`${bloque3.title}${(bloque3.dataV).join("")}${(bloque3.title2)}${(bloque3.dataD).join("")}`)
+            document.querySelector("#bloqueTres").insertAdjacentHTML("beforeend",`${bloque3.title}${(bloque3.dataV).join("")}${(bloque3.title2)}${(bloque3.dataD).join("")}`);
+            ws.terminate();
         })
     },
 }
