@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/932c26312f.js"></script>
+    <title>Presupuesto</title>
+</head>
+
+<body>
+
+    <div class="container-fluid p-0">
+        <div class="header d-flex justify-content-center align-items-center">
+            <div class="card" style="width: 28rem;background-color: transparent; border: none; color: white;">
+                <div class="card-body text-center">
+                    <h5 class="card-title mt-3 mt-sm-4">presupuesto</h5>
+                    <h2 class="card-title ">$34552435</h6>
+                        <div class="card-body text-center ">
+                            <div class="d-flex justify-content-between align-items-center  my-2">
+                                <h5>INGRESOS</h5>
+                                <h5><span>$</span>6575675 <span class="badge bg-info"><samp>%</samp> </h5>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center ">
+                                <h5>EGRESOS</h5>
+                                <h5> <span>$</span> 65765 <span class="badge bg-info"><samp>%</samp> </span></h5>
+                            </div>
+                            <div></div>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- seccion de los inputs -->
+        <div class="midle d-flex align-items-center justify-content-center ">
+            <form class="row gx-0 bg-light " style="min-width: 100%;">
+                <!-- operacion -->
+                <div
+                    class="col-2 col-md-4 pe-2 ps-2 py-1 py-md-2 d-flex justify-content-center justify-content-sm-center justify-content-md-end">
+                    <select class="form-select w-25 " name="operacion" aria-label="Default select example">
+                        <option value="sum" selected> + </option>
+                        <option value="res"> - </option>
+                    </select>
+                </div>
+                <!--  input descripcion -->
+                <div class="col-10 col-md-3 d-flex justify-content-center pe-2 py-1 py-md-2">
+                    <input type="text" class="form-control  text-center" placeholder="Agregar Descripcion de movimineto"
+                        name="descripcion" id="descripcion">
+                </div>
+
+                <!-- input valo -->
+                <div class="col-12 col-md-2  d-flex justify-content-center pe-2 py-1 py-md-2 ps-2">
+                    <input type="text" class="form-control  text-center" placeholder="$0" name="descripcion"
+                        id="descripcion">
+                </div>
+
+                <!-- submit btn -->
+                <div
+                    class="col-12 col-md-3 d-flex justify-content-center justify-content-md-start px-2 pb-1 pb-md-0 align-items-center">
+                    <button type="submit" class="rounded-circle  border-0 boton">
+                        <i class="fa-regular fa-circle-check" style="color: #3fd942; font-size: 30px;"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- tablas -->
+        <div class="container body py-3">
+            <div class="row">
+                <div class="col-12 col-md-6 p-0 d-flex justify-content-center ">
+
+                    <div class="accordion accordion-flush ancho" id="accordionFlushIngresos">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header " id="flush-headingOne">
+                                <button class="accordion-button collapsed border text-info" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    INGRESOS
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushIngresos">
+                                <div class="accordion-body">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Descripcion</th>
+                                                <th scope="col">Valor Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="hoverTable">
+                                            <tr>
+                                                <td scope="row">1</td>
+                                                <td class="text-info">Mark</td>                                               
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 p-0 d-flex justify-content-center ">
+                    <div class="accordion accordion-flush ancho" id="accordionFlushEgresos">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header " id="flush-headingOne">
+                                <button class="accordion-button collapsed border text-danger" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#Egresos" aria-expanded="false"
+                                    aria-controls="Egresos">
+                                    EGRESOS
+                                </button>
+                            </h2>
+                            <div id="Egresos" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushEgresos">
+                                <div class="accordion-body">
+                                    <table class="table ">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Descripcion</th>
+                                                <th scope="col">Valor Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="hoverTable">
+                                            <tr>
+                                                <td scope="row">1</td>
+                                                <td class="text-danger">Mark</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  prueba -->
+
+
+    </div>
+
+</body>
+
+</html>
