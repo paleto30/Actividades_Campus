@@ -12,40 +12,28 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/932c26312f.js"></script>
+    <script src="main.js" type="module" async></script>
     <title>Presupuesto</title>
 </head>
 
 <body>
 
     <div class="container-fluid p-0">
-        <div class="header d-flex justify-content-center align-items-center">
+        <div class="header d-flex justify-content-center align-items-center ">
             <div class="card" style="width: 28rem;background-color: transparent; border: none; color: white;">
-                <div class="card-body text-center">
-                    <h5 class="card-title mt-3 mt-sm-4">presupuesto</h5>
-                    <h2 class="card-title ">$34552435</h6>
-                        <div class="card-body text-center ">
-                            <div class="d-flex justify-content-between align-items-center  my-2">
-                                <h5>INGRESOS</h5>
-                                <h5><span>$</span>6575675 <span class="badge bg-info"><samp>%</samp> </h5>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center ">
-                                <h5>EGRESOS</h5>
-                                <h5> <span>$</span> 65765 <span class="badge bg-info"><samp>%</samp> </span></h5>
-                            </div>
-                            <div></div>
-                        </div>
+                <div class="card-body text-center" id="CardData">
+                    <!-- data del presupuesto, ingresos y egresos -->
                 </div>
-
             </div>
         </div>
 
         <!-- seccion de los inputs -->
         <div class="midle d-flex align-items-center justify-content-center ">
-            <form class="row gx-0 bg-light " style="min-width: 100%;">
+            <form class="row gx-0 bg-light " style="min-width: 100%;" id="Form">
                 <!-- operacion -->
                 <div
                     class="col-2 col-md-4 pe-2 ps-2 py-1 py-md-2 d-flex justify-content-center justify-content-sm-center justify-content-md-end">
-                    <select class="form-select w-25 " name="operacion" aria-label="Default select example">
+                    <select class="form-select w-25 " name="operacion" aria-label="Default select example" required>
                         <option value="sum" selected> + </option>
                         <option value="res"> - </option>
                     </select>
@@ -53,13 +41,12 @@
                 <!--  input descripcion -->
                 <div class="col-10 col-md-3 d-flex justify-content-center pe-2 py-1 py-md-2">
                     <input type="text" class="form-control  text-center" placeholder="Agregar Descripcion de movimineto"
-                        name="descripcion" id="descripcion">
+                        name="descripcion" id="descripcion" required>
                 </div>
 
                 <!-- input valo -->
                 <div class="col-12 col-md-2  d-flex justify-content-center pe-2 py-1 py-md-2 ps-2">
-                    <input type="text" class="form-control  text-center" placeholder="$0" name="descripcion"
-                        id="descripcion">
+                    <input type="text" class="form-control  text-center" placeholder="$0" name="valor" id="valor" value="" required>
                 </div>
 
                 <!-- submit btn -->
@@ -80,8 +67,8 @@
                     <div class="accordion accordion-flush ancho" id="accordionFlushIngresos">
                         <div class="accordion-item">
                             <h2 class="accordion-header " id="flush-headingOne">
-                                <button class="accordion-button collapsed border text-info" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                <button class="accordion-button collapsed border text-info" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
                                     INGRESOS
                                 </button>
@@ -99,7 +86,7 @@
                                         <tbody class="hoverTable">
                                             <tr>
                                                 <td scope="row">1</td>
-                                                <td class="text-info">Mark</td>                                               
+                                                <td class="text-info">Mark</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -112,14 +99,14 @@
                     <div class="accordion accordion-flush ancho" id="accordionFlushEgresos">
                         <div class="accordion-item">
                             <h2 class="accordion-header " id="flush-headingOne">
-                                <button class="accordion-button collapsed border text-danger" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#Egresos" aria-expanded="false"
+                                <button class="accordion-button collapsed border text-danger" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#Egresos" aria-expanded="false"
                                     aria-controls="Egresos">
                                     EGRESOS
                                 </button>
                             </h2>
-                            <div id="Egresos" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushEgresos">
+                            <div id="Egresos" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                                data-bs-parent="#accordionFlushEgresos">
                                 <div class="accordion-body">
                                     <table class="table ">
                                         <thead>
@@ -142,10 +129,6 @@
                 </div>
             </div>
         </div>
-
-        <!--  prueba -->
-
-
     </div>
 
 </body>
