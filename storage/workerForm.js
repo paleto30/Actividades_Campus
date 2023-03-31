@@ -1,13 +1,13 @@
 let workerForm = {
 
+
     showFormulario(dataForm){
         return `
         <!-- operacion -->
         <div
             class="col-2 col-md-4 pe-2 ps-2 py-1 py-md-2 d-flex justify-content-center justify-content-sm-center justify-content-md-end">
             <select class="form-select w-25 " name="operacion" aria-label="Default select example">
-                <option value="" selected> + </option>
-                <option value="res"> - </option>
+                ${dataForm.operacion.map((k,i) => (`<option value="${k.value}" ${i==0 ? 'selected': ''}>${k.text}</option>`))}
             </select>
         </div>
         <!--  input descripcion -->
@@ -33,5 +33,10 @@ let workerForm = {
 }
 
 self.addEventListener("message",(e)=>{
-    console.log(e.data.operacion);
+    //console.log(e.data.operacion);
+    //let data = workerForm.showFormulario(e.data);
+    let datos = e.data.operacion.map((k,i) => (`<option value="${k.value}" ${i==0 ? 'selected': ''}>${k.text}</option>`)); 
+
+    //console.log(datos);
+    //console.log(data);
 })

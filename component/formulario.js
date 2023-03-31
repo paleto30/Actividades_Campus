@@ -3,11 +3,11 @@ export default{
     dataF:{
         operacion:[
             {
-                value:"sumar",
+                value:true,
                 text:"+"
             },
             {
-                value:"restar",
+                value:false,
                 text:"-"
             }
         ],
