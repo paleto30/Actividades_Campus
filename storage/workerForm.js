@@ -12,13 +12,13 @@ let workerForm = {
         </div>
         <!--  input descripcion -->
         <div class="col-10 col-md-3 d-flex justify-content-center pe-2 py-1 py-md-2">
-            <input type="text" class="form-control  text-center" placeholder="Agregar Descripcion de movimineto"
-                name="descripcion" id="descripcion">
+            <input type="text" class="form-control  text-center" placeholder="${dataForm.descripcion.placeholder}"
+                name="${dataForm.descripcion.name}" id="descripcion">
         </div>
 
         <!-- input valo -->
         <div class="col-12 col-md-2  d-flex justify-content-center pe-2 py-1 py-md-2 ps-2">
-            <input type="text" class="form-control  text-center" placeholder="$0" name="valor" id="valor" value="0">
+            <input type="text" class="form-control  text-center" placeholder="${dataForm.valor.placeholder}" name="${dataForm.valor.name}" id="${dataForm.valor.name}" value="${dataForm.valor.value}">
         </div>
 
         <!-- submit btn -->
@@ -33,10 +33,7 @@ let workerForm = {
 }
 
 self.addEventListener("message",(e)=>{
-    //console.log(e.data.operacion);
-    //let data = workerForm.showFormulario(e.data);
-    let datos = e.data.operacion.map((k,i) => (`<option value="${k.value}" ${i==0 ? 'selected': ''}>${k.text}</option>`)); 
-
-    //console.log(datos);
-    //console.log(data);
+    let retorno = workerForm.showFormulario(e.data);
+    //console.log(retorno);
+    postMessage(retorno);
 })
