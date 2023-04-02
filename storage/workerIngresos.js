@@ -1,0 +1,48 @@
+import funciones from "../funciones/funciones.js"
+
+let workerIngresos = {
+
+    showEstructur(data){
+        let thead = data.StructTable.map((v,k)=>{
+            return ` <th scope="col">${v.col}</th>`
+        })
+        let registros = data.body.map((v,k)=> `
+        <tr>
+            <td scope="row">${v.description}</td>
+            <td class="text-info">$ ${funciones.convertirMoneda(v.valor)}</td>
+        </tr>
+        `)
+         return`
+         <div class="accordion accordion-flush ancho" id="accordionFlushIngresos">
+         <div class="accordion-item">
+             <h2 class="accordion-header " id="flush-headingOne">
+                 <button class="accordion-button collapsed border text-info" type="button"
+                     data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
+                     aria-controls="flush-collapseOne">
+                     ${data.nameTable}
+                 </button>
+             </h2>
+             <div id="flush-collapseOne" class="accordion-collapse collapse"
+                 aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushIngresos">
+                 <div class="accordion-body">
+                     <table class="table">
+                         <thead>
+                             <tr>
+                                 ${thead.join(" ")}
+                             </tr>
+                         </thead>
+                         <tbody class="hoverTable" id="registrosD">
+                            ${registros.join("")}
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </div>
+     </div>`   
+    }
+}
+
+self.addEventListener("message",(e)=>{
+    let data = workerIngresos.showEstructur(e.data);
+    postMessage(data);
+})
