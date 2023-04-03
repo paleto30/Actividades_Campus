@@ -3,7 +3,6 @@ let resultados = {
 
     showInfos(datos){
         let config = new Intl.NumberFormat("de-De",{minimumFractionDigits:2});
-
         return `
         <h5 class="card-title mt-3 mt-sm-4">${datos[0].text}</h5>
         <h2 class="card-title " id="PresupuestoVal"><span>$</span>${config.format(datos[0].valor)}</h6>
@@ -31,7 +30,8 @@ let resultados = {
 }
 
 self.addEventListener("message",(e)=>{
-    let datosResult = resultados.showInfos(e.data);
+    console.log(e.data.base.dataR);
+    let datosResult = resultados.showInfos(e.data.base.dataR);
     postMessage(datosResult);
     //console.log(e.data);
 });

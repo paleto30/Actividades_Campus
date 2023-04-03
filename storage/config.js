@@ -1,19 +1,19 @@
 export default{
-
     dataMyResultados(){
+
         localStorage.setItem("myResult",JSON.stringify({
             dataR:[
                 {
                     text:"Presupuesto",
-                    valor:2312313
+                    valor: 0
                 },
                 {
                     text:"INGRESOS",
-                    valor:1000000
+                    valor:0
                 },
                 {   
                     text:"EGRESOS",
-                    valor:21321
+                    valor:0
                 }
             ],
         }))
@@ -23,11 +23,11 @@ export default{
             dataF:{
                 operacion:[
                     {
-                        value:true,
+                        value:1,
                         text:"+"
                     },
                     {
-                        value:false,
+                        value:0,
                         text:"-"
                     }
                 ],
@@ -39,7 +39,6 @@ export default{
                 valor:{
                     name: "valor",
                     placeholder:"$0",
-                    value: 0
                 }
             },
         }))
@@ -101,5 +100,6 @@ export default{
                 ]
             },
         }))
-    }
+    },
 }
+
