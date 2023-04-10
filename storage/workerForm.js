@@ -24,7 +24,7 @@ let workerForm = {
         <!-- submit btn -->
         <div
             class="col-12 col-md-3 d-flex justify-content-center justify-content-md-start px-2 pb-1 pb-md-0 align-items-center">
-            <button type="submit" class="rounded-circle  border-0 boton">
+            <button type="submit" class="rounded-circle  border-0 boton" id="send">
                 <i class="fa-regular fa-circle-check" style="color: #3fd942; font-size: 30px;"></i>
             </button>
         </div>

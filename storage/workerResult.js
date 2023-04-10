@@ -1,8 +1,8 @@
 
 let resultados = {
 
-    showInfos(datos){
-        let config = new Intl.NumberFormat("de-De",{minimumFractionDigits:2});
+    showInfos(datos) {
+        let config = new Intl.NumberFormat("de-De", { minimumFractionDigits: 2 });
         return `
         <h5 class="card-title mt-3 mt-sm-4">${datos[0].text}</h5>
         <h2 class="card-title " id="PresupuestoVal"><span>$</span>${config.format(datos[0].valor)}</h6>
@@ -29,20 +29,36 @@ let resultados = {
     },
 }
 
-self.addEventListener("message",(e)=>{
-    //let renderData = e.data.dataR;
-    //console.log(renderData[0].valor = 20);
+self.addEventListener("message", (e) => {
+    let objeto = e.data.page.dataR;
+    let registro = e.data.registro;
+    const registroIngreso = []; 
+    const registroEgreso = []; 
+    registro.forEach(element => {
+        (element.operacion) ? registroIngreso.unshift(element) : registroEgreso.unshift(element);
+        console.log(element);
+    });
+    
 
+    //console.log(objeto[0].valor =12);
+    let presupuesto = objeto[0].valor;
+    let ingresos = objeto[1].valor;
+    let egresos = objeto[2].valor;
 
-    console.log(e.data);
-   
+    registroIngreso.forEach((v , k)=>{
+        ingresos += v.valor 
+    })    
+    registroEgreso.forEach((v , k)=>{
+        egresos += v.valor 
+    })  
 
-    let presupuesto = 0;  
-    let ingresos = 0;   
-    let egresos = 0; 
-       
-    console.log(`presupuesto: ${presupuesto}\ningresos: ${ingresos}\negresos: ${egresos}`);
+    presupuesto = ingresos-egresos;
 
-    //let datosResult = resultados.showInfos(renderData);
-    //postMessage(datosResult);
+    
+    objeto[0].valor = presupuesto;
+    objeto[1].valor = ingresos;
+    objeto[2].valor = egresos; 
+    
+    let datosResult = resultados.showInfos(objeto);
+    postMessage(datosResult);
 });
