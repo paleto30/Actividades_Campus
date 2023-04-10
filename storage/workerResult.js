@@ -30,8 +30,19 @@ let resultados = {
 }
 
 self.addEventListener("message",(e)=>{
-    console.log(e.data.base.dataR);
-    let datosResult = resultados.showInfos(e.data.base.dataR);
-    postMessage(datosResult);
-    //console.log(e.data);
+    //let renderData = e.data.dataR;
+    //console.log(renderData[0].valor = 20);
+
+
+    console.log(e.data);
+   
+
+    let presupuesto = 0;  
+    let ingresos = 0;   
+    let egresos = 0; 
+       
+    console.log(`presupuesto: ${presupuesto}\ningresos: ${ingresos}\negresos: ${egresos}`);
+
+    //let datosResult = resultados.showInfos(renderData);
+    //postMessage(datosResult);
 });

@@ -1,7 +1,6 @@
 export default{
     dataMyResultados(){
-
-        localStorage.setItem("myResult",JSON.stringify({
+        localStorage.setItem("myResult", JSON.stringify({
             dataR:[
                 {
                     text:"Presupuesto",
@@ -16,7 +15,7 @@ export default{
                     valor:0
                 }
             ],
-        }))
+        })) 
     },
     dataMyForm(){
         localStorage.setItem("myForm", JSON.stringify({
