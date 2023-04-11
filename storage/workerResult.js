@@ -1,27 +1,27 @@
+import funciones from "../funciones/funciones.js";
 
 let resultados = {
-
+    
     showInfos(datos) {
-        let config = new Intl.NumberFormat("de-De", { minimumFractionDigits: 2 });
         return `
-        <h5 class="card-title mt-3 mt-sm-4">${datos[0].text}</h5>
-        <h2 class="card-title " id="PresupuestoVal"><span>$</span>${config.format(datos[0].valor)}</h6>
+        <h3 class="card-title mt-3 mt-sm-4">${datos[0].text}</h3>
+        <h1 class="card-title " id="PresupuestoVal"><span>$</span>${funciones.convertirMoneda(datos[0].valor)} <span class="badge bg-info">${funciones.convertirMoneda(datos.porciento2)}<samp>%</samp></samp></h6>
             <div class="card-body text-center ">
-                <div class="d-flex justify-content-between align-items-center  my-2">
-                    <h5>${datos[1].text}</h5>
-                    <h5>
+                <div class="d-flex justify-content-between align-items-center  my-2 text-info">
+                    <h4 class="textos">${datos[1].text}</h4>
+                    <h4 class="textos">
                         <span>$</span>
-                        <label id="valIngreso">${config.format(datos[1].valor)}</label>
-                        <span class="badge bg-info"><samp>%</samp></samp>
-                    </h5>
+                        <label id="valIngreso">${funciones.convertirMoneda(datos[1].valor)}</label>
+                        <span class="badge bg-info">100<samp>%</samp></samp>
+                    </h4>
                 </div>
-                <div class="d-flex justify-content-between align-items-center ">
-                    <h5>${datos[2].text}</h5>
-                    <h5>
+                <div class="d-flex justify-content-between align-items-center text-danger-emphasis">
+                    <h4 class="textos">${datos[2].text}</h4>
+                    <h4 class="textos">
                         <span>$</span> 
-                        <span id="valEgreso"> ${config.format(datos[2].valor)}</span>
-                        <span class="badge bg-info"><samp>%</samp> </span>
-                    </h5>
+                        <span id="valEgreso"> ${funciones.convertirMoneda(datos[2].valor)}</span>
+                        <span class="badge bg-danger">${funciones.convertirMoneda(datos.porciento1)}<samp>%</samp> </span>
+                    </h4>
                 </div>
                 <div></div>
             </div>
@@ -36,11 +36,9 @@ self.addEventListener("message", (e) => {
     const registroEgreso = []; 
     registro.forEach(element => {
         (element.operacion) ? registroIngreso.unshift(element) : registroEgreso.unshift(element);
-        console.log(element);
+        //console.log(element);
     });
-    
 
-    //console.log(objeto[0].valor =12);
     let presupuesto = objeto[0].valor;
     let ingresos = objeto[1].valor;
     let egresos = objeto[2].valor;
@@ -51,14 +49,13 @@ self.addEventListener("message", (e) => {
     registroEgreso.forEach((v , k)=>{
         egresos += v.valor 
     })  
-
     presupuesto = ingresos-egresos;
-
-    
     objeto[0].valor = presupuesto;
     objeto[1].valor = ingresos;
     objeto[2].valor = egresos; 
     
+    objeto["porciento1"] = (egresos *100) / ingresos;
+    objeto["porciento2"] = (presupuesto*100) / ingresos;
     let datosResult = resultados.showInfos(objeto);
     postMessage(datosResult);
 });

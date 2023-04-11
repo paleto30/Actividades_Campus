@@ -7,15 +7,15 @@ let workerEgresos = {
         })
         let registros = data.body.map((v,k)=> `
         <tr>
-            <td scope="row">${v.description}</td>
-            <td class="text-info">$ ${funciones.convertirMoneda(v.valor)}</td>
+            <td scope="row">${v.descripcion}</td>
+            <td class="text-danger-emphasis">$ ${funciones.convertirMoneda(v.valor)}</td>
         </tr>
         `)
         return `
         <div class="accordion accordion-flush ancho" id="accordionFlushEgresos">
             <div class="accordion-item">
                 <h2 class="accordion-header " id="flush-headingOne">
-                    <button class="accordion-button collapsed border text-danger" type="button"
+                    <button class="accordion-button collapsed border text-danger-emphasis" type="button"
                         data-bs-toggle="collapse" data-bs-target="#Egresos" aria-expanded="false"
                         aria-controls="Egresos">
                         ${data.nameTable}

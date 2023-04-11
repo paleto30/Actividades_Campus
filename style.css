@@ -40,3 +40,7 @@
 .ancho{
     width: 100%;
 }
+
+.badge{
+    font-size: small;
+}

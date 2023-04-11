@@ -3,11 +3,11 @@ export default{
     registros: (localStorage.getItem("Registros") ? JSON.parse(localStorage.getItem("Registros")) : []),
 
     dataMyResultados(){
-        //localStorage.setItem("myResult", JSON.stringify()) 
+        
         return {
             dataR:[
                 {
-                    text:"Presupuesto",
+                    text:"Disponible",
                     valor: 0
                 },
                 {
@@ -61,20 +61,7 @@ export default{
                     }
                 ],
         
-                body:[
-                    {
-                        description:"sueldo de capus",
-                        valor:200000
-                    },
-                    {
-                        description:"sueldo de capus2",
-                        valor:400000
-                    },
-                    {
-                        description:"Barbacha de capus2",
-                        valor:150000
-                    }
-                ]
+                body: this.renderTablasI(this.registros)
             },
         }))
     },
@@ -91,18 +78,29 @@ export default{
                         col:"Valor"
                     }
                 ],
-                body:[
-                    {
-                        description:"Pago Recibo Luz",
-                        valor:120000
-                    },
-                    {
-                        description:"Pago Internet",
-                        valor:80000
-                    },
-                ]
+                body: this.renderTablasE(this.registros)
             },
         }))
     },
+
+
+    renderTablasI(data){
+        let ingresoss = []
+        data.forEach(element => {
+            if(element.operacion){
+                ingresoss.push(element);
+            }
+        });
+        return ingresoss
+    },
+    renderTablasE(data){
+        let egresoss = []
+        data.forEach(element => {
+            if(!element.operacion){
+                egresoss.push(element);
+            }
+        });
+        return egresoss
+    }
 }
 

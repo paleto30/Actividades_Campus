@@ -8,7 +8,7 @@ let workerIngresos = {
         })
         let registros = data.body.map((v,k)=> `
         <tr>
-            <td scope="row">${v.description}</td>
+            <td scope="row">${v.descripcion}</td>
             <td class="text-info">$ ${funciones.convertirMoneda(v.valor)}</td>
         </tr>
         `)
@@ -16,7 +16,7 @@ let workerIngresos = {
          <div class="accordion accordion-flush ancho" id="accordionFlushIngresos">
          <div class="accordion-item">
              <h2 class="accordion-header " id="flush-headingOne">
-                 <button class="accordion-button collapsed border text-info" type="button"
+                 <button class="accordion-button collapsed border text-primary" type="button"
                      data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
                      aria-controls="flush-collapseOne">
                      ${data.nameTable}
