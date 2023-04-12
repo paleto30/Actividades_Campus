@@ -18,7 +18,7 @@ let workerForm = {
 
         <!-- input valo -->
         <div class="col-12 col-md-2  d-flex justify-content-center pe-2 py-1 py-md-2 ps-2">
-            <input type="text" class="form-control  text-center" placeholder="${dataForm.valor.placeholder}" name="${dataForm.valor.name}" id="${dataForm.valor.name}" required>
+            <input type="number" class="form-control  text-center" placeholder="${dataForm.valor.placeholder}" name="${dataForm.valor.name}" id="${dataForm.valor.name}" required>
         </div>
 
         <!-- submit btn -->

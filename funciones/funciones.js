@@ -5,7 +5,4 @@ export default{
         return `${config.format(param)}`;
     },
 
-
-    
-
 }
