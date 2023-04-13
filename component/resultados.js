@@ -7,7 +7,6 @@ export default{
         const ws = new Worker("./storage/workerResult.js",{type:"module"});
         ws.postMessage({page:datos,registro:config.registros});
         ws.addEventListener("message",(e)=>{
-            e.preventDefault();
             document.querySelector("#CardData").innerHTML = e.data;
             ws.terminate();
         })

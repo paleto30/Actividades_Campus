@@ -18,7 +18,7 @@ form.addEventListener("submit", (e) => {
     e.target.reset();
     e.preventDefault();
     localStorage.setItem("Registros", JSON.stringify(config.registros));
-    //location.reload();
+    
     render.showAll();
 })
 
@@ -30,6 +30,7 @@ function eliminarALl(e){
     console.log(e.target.classList.contains("drop"));
     if (e.target.classList.contains("drop")) {  
         localStorage.clear();
+        config.registros = (localStorage.getItem("Registros") ? JSON.parse(localStorage.getItem("Registros")) : []);
         render.showAll()
     }
 }
