@@ -5,4 +5,8 @@ export default{
         return `${config.format(param)}`;
     },
 
+    porcentajes(cien,otro){
+        return Math.round((otro * 100) /cien);
+    }
+
 }
