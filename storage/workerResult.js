@@ -36,7 +36,6 @@ self.addEventListener("message", (e) => {
     const registroEgreso = []; 
     registro.forEach(element => {
         (element.operacion) ? registroIngreso.unshift(element) : registroEgreso.unshift(element);
-        //console.log(element);
     });
 
     let presupuesto = objeto[0].valor;
@@ -50,12 +49,13 @@ self.addEventListener("message", (e) => {
         egresos += v.valor 
     })  
     presupuesto = ingresos-egresos;
+
     objeto[0].valor = presupuesto;
     objeto[1].valor = ingresos;
     objeto[2].valor = egresos; 
     
-    objeto["porciento1"] = (egresos *100) / ingresos;
-    objeto["porciento2"] = (presupuesto*100) / ingresos;
+    objeto["porciento1"] = funciones.porcentajes(ingresos,egresos);
+    objeto["porciento2"] = funciones.porcentajes(ingresos,presupuesto); 
     let datosResult = resultados.showInfos(objeto);
     postMessage(datosResult);
 });
