@@ -1,6 +1,6 @@
 import config from "./storage/config.js";
 import render from "./component/render.js";
-import funciones from "./funciones/funciones.js";
+
 
 
 render.showAll();
