@@ -25,5 +25,14 @@ form.addEventListener("submit", (e) => {
     e.target.reset();
     e.preventDefault();
     localStorage.setItem("Registros", JSON.stringify(config.registros));
-    location.reload();
+    //location.reload();
+    resultados.renderDataWorker();
+    formulario.renderDataWorker();
+    ingresos.renderDataWorker();
+    egresos.renderDataWorker();
 })
+
+
+
+
+const btnDelete = document.querySelector("#");
