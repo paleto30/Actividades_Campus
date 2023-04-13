@@ -8,6 +8,7 @@ export default{
         ws.postMessage(this.dataF);
         ws.addEventListener("message",(e)=>{
             document.querySelector("#Form").innerHTML = e.data;
+            ws.terminate();
         });
     }
 }

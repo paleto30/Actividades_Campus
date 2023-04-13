@@ -7,7 +7,7 @@ export default{
         return {
             dataR:[
                 {
-                    text:"Disponible",
+                    text:"DISPONIBLE",
                     valor: 0
                 },
                 {
@@ -58,6 +58,9 @@ export default{
                     },
                     {
                         col:"Valor"
+                    },
+                    {
+                        col:"Borrar"
                     }
                 ],
         
@@ -76,6 +79,9 @@ export default{
                     },
                     {
                         col:"Valor"
+                    },
+                    {
+                        col:"Borrar"
                     }
                 ],
                 body: this.renderTablasE(this.registros)

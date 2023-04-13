@@ -11,7 +11,8 @@ export default{
             document.querySelector("#CardData").innerHTML = e.data;
             ws.terminate();
         })
-
+        
+        
         
     }
 

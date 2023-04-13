@@ -4,12 +4,15 @@ let workerIngresos = {
 
     showEstructur(data){
         let thead = data.StructTable.map((v,k)=>{
-            return ` <th scope="col">${v.col}</th>`
+            return ` <th scope="col" class="text-center align-midle">${v.col}</th>`
         })
         let registros = data.body.map((v,k)=> `
         <tr>
-            <td scope="row">${v.descripcion}</td>
-            <td class="text-info">$ ${funciones.convertirMoneda(v.valor)}</td>
+            <td scope="row" class="text-center align-midle">${v.descripcion}</td>
+            <td class="text-info text-center align-midle">$ ${funciones.convertirMoneda(v.valor)}</td>
+            <td class="text-center align-midle">
+                <button type="button" class="btn btn-danger" id="${k}" ><i class="fa-solid fa-trash-can"></i></button>
+            </td>
         </tr>
         `)
          return`

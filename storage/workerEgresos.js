@@ -3,12 +3,15 @@ let workerEgresos = {
 
     showEstructure(data) {
         let thead = data.structTable.map((v,k)=>{
-            return ` <th scope="col">${v.col}</th>`
+            return ` <th scope="col" class="text-center align-midle">${v.col}</th>`
         })
         let registros = data.body.map((v,k)=> `
         <tr>
-            <td scope="row">${v.descripcion}</td>
-            <td class="text-danger-emphasis">$ ${funciones.convertirMoneda(v.valor)}</td>
+            <td scope="row" class="text-center align-midle">${v.descripcion}</td>
+            <td class="text-danger-emphasis text-center align-midle">$ ${funciones.convertirMoneda(v.valor)}</td>
+            <td class="text-center align-midle">
+                <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+            </td>
         </tr>
         `)
         return `

@@ -1,15 +1,8 @@
 import config from "./storage/config.js";
-
-import ingresos from "./component/ingresos.js"
-import formulario from "./component/formulario.js";
-import resultados from "./component/resultados.js";
-import egresos from "./component/egresos.js";
+import render from "./component/render.js";
 
 
-resultados.renderDataWorker();
-formulario.renderDataWorker();
-ingresos.renderDataWorker();
-egresos.renderDataWorker();
+render.showAll();
 
 
 const form = document.querySelector("#Form");
@@ -26,13 +19,18 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     localStorage.setItem("Registros", JSON.stringify(config.registros));
     //location.reload();
-    resultados.renderDataWorker();
-    formulario.renderDataWorker();
-    ingresos.renderDataWorker();
-    egresos.renderDataWorker();
+    render.showAll();
 })
 
 
 
+const btnDeleteAll = document.querySelector("#deleteA");
+btnDeleteAll.addEventListener('click',eliminarALl);
+function eliminarALl(e){
+    console.log(e.target.classList.contains("drop"));
+    if (e.target.classList.contains("drop")) {  
+        localStorage.clear();
+        render.showAll()
+    }
+}
 
-const btnDelete = document.querySelector("#");
