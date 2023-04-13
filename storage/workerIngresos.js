@@ -11,7 +11,7 @@ let workerIngresos = {
             <td scope="row" class="text-center align-midle">${v.descripcion}</td>
             <td class="text-info text-center align-midle">$ ${funciones.convertirMoneda(v.valor)}</td>
             <td class="text-center align-midle">
-                <button type="button" class="btn btn-danger" id="${k}" ><i class="fa-solid fa-trash-can"></i></button>
+                <button type="button" class="btn btn-danger  borrar" data-registro="${v.id}" ><i class="fa-solid fa-trash-can borrar" data-registro="${v.id}"></i></button>
             </td>
         </tr>
         `)

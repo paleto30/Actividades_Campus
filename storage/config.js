@@ -92,21 +92,24 @@ export default{
 
     renderTablasI(data){
         let ingresoss = []
-        data.forEach(element => {
+        data.forEach((element,k) => {
             if(element.operacion){
-                ingresoss.push(element);
+                element["id"]=k
+                ingresoss.push(element);         
             }
         });
         return ingresoss
     },
     renderTablasE(data){
         let egresoss = []
-        data.forEach(element => {
+        data.forEach((element, k) => {
             if(!element.operacion){
+                element["id"]=k
                 egresoss.push(element);
             }
         });
         return egresoss
-    }
+    },
+    
 }
 
