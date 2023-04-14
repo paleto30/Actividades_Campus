@@ -1,7 +1,7 @@
 export default{
 
-    registros: (localStorage.getItem("Registros") ? JSON.parse(localStorage.getItem("Registros")) : []),
-
+    registros: (localStorage.getItem("Registros") ? JSON.parse(localStorage.getItem("Registros")) : [] ),
+    
     dataMyResultados(){
         
         return {
@@ -110,6 +110,7 @@ export default{
         });
         return egresoss
     },
+
     
 }
 
