@@ -47,7 +47,7 @@ const getOption = (ing, egr)=>{
 
 
 const initCharts = ()=>{
-    const grafica = echarts.init(document.querySelector("#Grf"), null,{width:800, height:700});
+    const grafica = echarts.init(document.querySelector("#Grf"));
     let totalIngresos = 0;
     let totalEgresos = 0;
     config.registros.forEach(ele => {
