@@ -27,30 +27,64 @@ form.addEventListener("submit", (e) => {
 
 // boton de borrar todos los datos registrados
 const btnDeleteAll = document.querySelector("#deleteA");
-btnDeleteAll.addEventListener('click',eliminarALl);
-function eliminarALl(e){
-    let confirma = confirm("¿estas seguro,\nse borrara todo?");
-    if (confirma) {
-        if (e.target.classList.contains("drop")) {  
-            localStorage.clear();
-            config.registros = (localStorage.getItem("Registros") ? JSON.parse(localStorage.getItem("Registros")) : []);
-            render.showAll()
-        }
+btnDeleteAll.addEventListener('click', eliminarALl);
+function eliminarALl(e) {
+
+    if (e.target.classList.contains("drop")) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+                localStorage.clear();
+                config.registros = (localStorage.getItem("Registros") ? JSON.parse(localStorage.getItem("Registros")) : []);
+                render.showAll()
+            }
+        })
+
     }
 }
 
 
 // boton de borrar un dato especifico
 const row = document.querySelector("#tablass");
-row.addEventListener('click',(e)=>{
-    if (e.target.classList.contains("borrar")) { 
-        let confirma = confirm("¿estas seguro?");
-        if (confirma) {
-            const id = e.target.dataset;
-            config.registros.splice(id.registro,1)
-            localStorage.setItem("Registros", JSON.stringify(config.registros))
-            config.registros = (localStorage.getItem("Registros") ? JSON.parse(localStorage.getItem("Registros")) : []);
-            render.showAll()
-        }  
+row.addEventListener('click', (e) => {
+    if (e.target.classList.contains("borrar")) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                );
+
+                const id = e.target.dataset;
+                config.registros.splice(id.registro, 1)
+                localStorage.setItem("Registros", JSON.stringify(config.registros))
+                config.registros = (localStorage.getItem("Registros") ? JSON.parse(localStorage.getItem("Registros")) : []);
+                render.showAll()
+
+            }
+        })
+
+
     }
 })
