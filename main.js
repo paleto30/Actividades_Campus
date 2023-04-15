@@ -29,10 +29,13 @@ form.addEventListener("submit", (e) => {
 const btnDeleteAll = document.querySelector("#deleteA");
 btnDeleteAll.addEventListener('click',eliminarALl);
 function eliminarALl(e){
-    if (e.target.classList.contains("drop")) {  
-        localStorage.clear();
-        config.registros = (localStorage.getItem("Registros") ? JSON.parse(localStorage.getItem("Registros")) : []);
-        render.showAll()
+    let confirma = confirm("¿estas seguro,\nse borrara todo?");
+    if (confirma) {
+        if (e.target.classList.contains("drop")) {  
+            localStorage.clear();
+            config.registros = (localStorage.getItem("Registros") ? JSON.parse(localStorage.getItem("Registros")) : []);
+            render.showAll()
+        }
     }
 }
 
@@ -40,11 +43,14 @@ function eliminarALl(e){
 // boton de borrar un dato especifico
 const row = document.querySelector("#tablass");
 row.addEventListener('click',(e)=>{
-    if (e.target.classList.contains("borrar")) {
-        const id = e.target.dataset;
-        config.registros.splice(id.registro,1)
-        localStorage.setItem("Registros", JSON.stringify(config.registros))
-        config.registros = (localStorage.getItem("Registros") ? JSON.parse(localStorage.getItem("Registros")) : []);
-        render.showAll()
+    if (e.target.classList.contains("borrar")) { 
+        let confirma = confirm("¿estas seguro?");
+        if (confirma) {
+            const id = e.target.dataset;
+            config.registros.splice(id.registro,1)
+            localStorage.setItem("Registros", JSON.stringify(config.registros))
+            config.registros = (localStorage.getItem("Registros") ? JSON.parse(localStorage.getItem("Registros")) : []);
+            render.showAll()
+        }  
     }
 })
