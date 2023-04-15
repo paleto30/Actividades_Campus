@@ -1,69 +1,109 @@
 <!DOCTYPE html>
-<html lang="sp">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="class.js" ></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>POO</title>
 </head>
+
 <body>
 
-    <!DOCTYPE html>
-<html lang="sp">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="main.js" defer></script>
-</head>
-<body>
-    <form>
-        <fieldset>
-            <legend>Clase Lapiz</legend>
-            <label>Color</label>
-            <input type="color" name="color"><br>
-            <label>Dimension</label>
-            <input type="range" name="dimension"><br>
-            <fieldset>
-                <legend>Marca</legend>
-                <input type="radio" name="marca" value="Mongo"><label>Mongo</label><br>
-                <input type="radio" name="marca" value="Norma"><label>Norma</label><br>
-                <input type="radio" name="marca" value="Fabel Castle"><label>Fabel Castle</label><br>
-                <input type="radio" name="marca" value="Big"><label>Big</label><br>
-            </fieldset>
-            <fieldset>
-                <legend>Borrador</legend>
-                <input type="radio" name="borrador" value="true"><label>Tiene</label><br>
-                <input type="radio" name="borrador" value="false"><label>No tiene</label><br>
-            </fieldset>
-            <fieldset>
-                <legend>Material</legend>
-                <input type="radio" name="material" value="Madera"><label>Madera</label><br>
-                <input type="radio" name="material" value="Goma"><label>Goma</label><br>
-            </fieldset>
-            <input type="submit" value="Enviar">
-        </fieldset>
-    </form>
-    <br><br><br>
-    <table border="solid">
-        <thead>
-            <tr>
-                <th>Color</th>
-                <th>Dimension</th>
-                <th>Marca</th>
-                <th>Borrador</th>
-                <th>Material</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="container-fluid ">
+        <div class="row  vh-100 d-flex align-items-center">
+            <div class="col-12 col-md-12 col-lg-6 d-flex justify-content-center ">
+                <div class="w-50 p-5  shadow p-3 mb-5 rounded ">
+                    <form>
+                        <label for="color" class="card-title ">Color</label><br>
+                        <div class="d-flex justify-content-center">
+                            <input type="color" class="w-50 p-1 border" name="color" id="color" style="height: 100px;">
+                        </div>
+                        <hr>
+                        <label for="dimension" class="form-label">Dimensión</label>
+                        <div class="d-flex justify-content-end">
+                            <span class="badge bg-primary fs-6" id="numero">12</span>
+                        </div>
+                        <input type="range" min="0" max="20" class="form-range w-100" id="dimension">
 
-        </tbody>
-    </table>
-</body>
-</html>
-    
+
+                        <label for="marca" class="card-title">Marca</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Seleccione</option>
+                            <option value="Mongo">Mongo</option>
+                            <option value="Norma">Norma</option>
+                            <option value="Big">Big</option>
+                        </select>
+                        <br>
+
+                        <label for="borrador" class="card-title">Borrador</label><br>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="borrador" id="borrador1">
+                            <label class="form-check-label" for="borrador1">Tiene</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="borrador" id="borrador2" checked>
+                            <label class="form-check-label" for="borrador2">No tiene</label>
+                        </div>
+                        <hr>
+
+                        <label for="borrador" class="card-title">Material</label><br>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="material" id="material1">
+                            <label class="form-check-label" for="material1">Madera</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="material" id="material2" checked>
+                            <label class="form-check-label" for="material2">Goma</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="material" id="material3" checked>
+                            <label class="form-check-label" for="material3">Bambu</label>
+                        </div>
+                        <br>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-6 d-flex justify-content-center justify-content-lg-start ">
+                <div class="w-75">
+                    <div class="w-100 d-flex justify-content-center">
+                        <h2>Regitros</h1>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center">Color</th>
+                                <th scope="col" class="text-center">Dimensión</th>
+                                <th scope="col" class="text-center">Marca</th>
+                                <th scope="col" class="text-center">Borrador</th>
+                                <th scope="col" class="text-center">Material</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 </body>
 </html>
