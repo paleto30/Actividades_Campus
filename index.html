@@ -8,7 +8,7 @@
     <meta name="Description" content="Enter your description here" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="main.js" type="module" defer></script>
     <title>POO</title>
 </head>
 
@@ -18,7 +18,7 @@
         <div class="row  vh-100 d-flex align-items-center">
             <div class="col-12 col-md-12 col-lg-6 d-flex justify-content-center ">
                 <div class="w-50 p-5  shadow p-3 mb-5 rounded ">
-                    <form>
+                    <form id="forms">
                         <label for="color" class="card-title ">Color</label><br>
                         <div class="d-flex justify-content-center">
                             <input type="color" class="w-50 p-1 border" name="color" id="color" style="height: 100px;">
@@ -28,13 +28,13 @@
                         <div class="d-flex justify-content-end">
                             <span class="badge bg-primary fs-6" id="numero">12</span>
                         </div>
-                        <input type="range" min="0" max="20" class="form-range w-100" id="dimension">
+                        <input type="range" name="dimension" min="0" max="20" class="form-range w-100" id="dimension">
 
 
                         <label for="marca" class="card-title">Marca</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" name="marca" aria-label="Default select example" id="marca">
                             <option selected>Seleccione</option>
-                            <option value="Mongo">Mongo</option>
+                            <option value="Mongol">Mongol</option>
                             <option value="Norma">Norma</option>
                             <option value="Big">Big</option>
                         </select>
@@ -42,26 +42,26 @@
 
                         <label for="borrador" class="card-title">Borrador</label><br>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="borrador" id="borrador1">
+                            <input class="form-check-input" type="radio" value="1" name="borrador" id="borrador1">
                             <label class="form-check-label" for="borrador1">Tiene</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="borrador" id="borrador2" checked>
+                            <input class="form-check-input" type="radio" value="0" name="borrador" id="borrador2" checked>
                             <label class="form-check-label" for="borrador2">No tiene</label>
                         </div>
                         <hr>
 
                         <label for="borrador" class="card-title">Material</label><br>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="material" id="material1">
+                            <input class="form-check-input" type="radio" value="Madera" name="material" id="material1">
                             <label class="form-check-label" for="material1">Madera</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="material" id="material2" checked>
+                            <input class="form-check-input" type="radio" value="Goma" name="material" id="material2" checked>
                             <label class="form-check-label" for="material2">Goma</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="material" id="material3" checked>
+                            <input class="form-check-input" type="radio" value="Bambu" name="material" id="material3" checked>
                             <label class="form-check-label" for="material3">Bambu</label>
                         </div>
                         <br>
@@ -87,14 +87,8 @@
                                 <th scope="col" class="text-center">Material</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                            </tr>
+                        <tbody id="bodyT">
+                            
                         </tbody>
                     </table>
                 </div>
