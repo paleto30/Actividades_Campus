@@ -1,35 +1,69 @@
 /* 
-  ¿QUE ES UN CALLBACK?
+  ¿QUE ES UNA PROMESA?
 */
 
 /* 
-  Como hemos dicho, las funciones callback no son más que un 
-  tipo de funciones que se pasan por parámetro a otras funciones. 
-  Además, los parámetros de dichas funciones toman un valor especial 
-  en el contexto del interior de la función.
-
-  En resumen, las funciones callback son una forma de manejar 
-  eventos y acciones en un programa de manera modular y escalable. 
-  Permiten que una función llame a otra función para manejar una 
-  tarea específica, lo que hace que el código sea más fácil de 
-  mantener y entender
+  una promesa es un objeto que representa un valor que 
+  puede no estar disponible aún, pero que se espera que 
+  lo esté en algún momento. Las promesas se utilizan 
+  comúnmente para manejar operaciones asincrónicas en 
+  JavaScript, como solicitudes de red, operaciones de 
+  base de datos o cualquier otra operación que pueda 
+  tomar un tiempo indeterminado para completarse.
 */
 
 
 /* 
-  por ejemplo si yo tengo un array de datos y quiero recorrer el array 
-  puedo hacer uso de un callback 
-  de la siguiente manera:
+  Cuando se crea una promesa, se proporciona una 
+  función que define la operación asincrónica que 
+  se realizará. Esta función recibe dos parámetros:
+  resolve y reject. La función 
+  resolve se utiliza para devolver el resultado 
+  exitoso de la operación, mientras que la función 
+  reject se utiliza para devolver un error si la operación fall
 */
 
-const personas = ["Andres","Camilo","Sergio","Angie"];
+/* 
+  Una vez que se ha creado una promesa, se puede utilizar 
+  el método then() para especificar una función de 
+  retorno de llamada que se ejecutará cuando la 
+  operación asincrónica haya finalizado exitosamente. 
+  También se puede utilizar el método catch() para 
+  especificar una función de retorno de llamada que se 
+  ejecutará si la operación falla. 
+*/
 
-personas.forEach((element, index) =>{     // como podemos observar se le esta pasando una funcion ()=>{}
-    console.log("Index: ",index," ","elemento: ",element,);          // como parametro a la funcion forEach();
-});
+/* ejemplo: 
+En este ejemplo, creamos una promesa 
+utilizando la sintaxis básica de new Promise(). La promesa espera 
+2 segundos antes de resolver con un valor y utilizamos el método 
+then() para obtener el valor resuelto y mostrarlo en la consola.
+ */
+const myPromise = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+      resolve('valor resuelto de la promesa')
+    }, 2000) 
+})
+
+myPromise.then((valor)=>{
+  console.log(valor);
+})
 
 
-// otro ejemplo de callback es el siguiennte
-// tenemos la funcion setTimeout(acc,time); recibe una funcion y un tiempo en milisegundos
+/* ejemplo 2:  Promesa con valor rechazado
 
-setTimeout(()=>{console.log("se ejecuta el callbackc");},2000);
+  En este ejemplo, creamos una promesa que se 
+  rechaza con un mensaje de error después de 2 segundos.
+  Utilizamos el método catch() para obtener el valor 
+  rechazado y mostrarlo en la consola.
+*/
+
+const mypromesa = new Promise((resolve, reject)=>{
+  setTimeout(()=>{
+    reject('Ocurrio un error al resolver la promesa');
+  }, 4000);
+})
+
+mypromesa.catch((error)=>{
+  console.log(error);
+})
