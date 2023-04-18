@@ -33,28 +33,28 @@
   ejecutará si la operación falla. 
 */
 
-/* ejemplo 3:  Promesa encadenada
-
-   En este ejemplo, creamos una promesa que se resuelve 
-   con un valor después de 2 segundos. Utilizamos el método 
-   then() para obtener el primer valor resuelto y retornar 
-   un segundo valor resuelto. Luego, encadenamos otro método 
-   then() para obtener el segundo valor resuelto y mostrarlo 
-   en la consola. 
+/* Método finally(): Este método se utiliza para 
+ejecutar un bloque de código después de que la promesa 
+se haya resuelto o rechazado, independientemente de si 
+ha habido un error o no. El método finally() se utiliza 
+típicamente para realizar limpieza o liberación de recursos 
+después de la finalización de una tarea. Ejemplo: 
 */
 
-const promise = new Promise((res, rej)=>{
-  setTimeout(()=>{
+const miPromesa = new Promise((res, rej) => {
+  setTimeout(() => {
     res('primer valor resuelto')
   })
 })
 
-promise.then((primerValor)=>{
-  console.log(primerValor);
-  return 'Segundo valor resuelto';
-})
-.then((segundoValor)=>{
-  console.log(segundoValor);
-})
-
+miPromesa
+  .then((resultado) => {
+    console.log(resultado);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+  .finally(() => {
+    console.log('La promesa ha finalizado');
+  });
 
