@@ -33,37 +33,28 @@
   ejecutará si la operación falla. 
 */
 
-/* ejemplo: 
-En este ejemplo, creamos una promesa 
-utilizando la sintaxis básica de new Promise(). La promesa espera 
-2 segundos antes de resolver con un valor y utilizamos el método 
-then() para obtener el valor resuelto y mostrarlo en la consola.
- */
-const myPromise = new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-      resolve('valor resuelto de la promesa')
-    }, 2000) 
-})
+/* ejemplo 3:  Promesa encadenada
 
-myPromise.then((valor)=>{
-  console.log(valor);
-})
-
-
-/* ejemplo 2:  Promesa con valor rechazado
-
-  En este ejemplo, creamos una promesa que se 
-  rechaza con un mensaje de error después de 2 segundos.
-  Utilizamos el método catch() para obtener el valor 
-  rechazado y mostrarlo en la consola.
+   En este ejemplo, creamos una promesa que se resuelve 
+   con un valor después de 2 segundos. Utilizamos el método 
+   then() para obtener el primer valor resuelto y retornar 
+   un segundo valor resuelto. Luego, encadenamos otro método 
+   then() para obtener el segundo valor resuelto y mostrarlo 
+   en la consola. 
 */
 
-const mypromesa = new Promise((resolve, reject)=>{
+const promise = new Promise((res, rej)=>{
   setTimeout(()=>{
-    reject('Ocurrio un error al resolver la promesa');
-  }, 4000);
+    res('primer valor resuelto')
+  })
 })
 
-mypromesa.catch((error)=>{
-  console.log(error);
+promise.then((primerValor)=>{
+  console.log(primerValor);
+  return 'Segundo valor resuelto';
 })
+.then((segundoValor)=>{
+  console.log(segundoValor);
+})
+
+
