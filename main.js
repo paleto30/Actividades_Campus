@@ -33,23 +33,24 @@
   ejecutará si la operación falla. 
 */
 
-/* Método Promise.all(): Este método se utiliza para 
-ejecutar varias promesas en paralelo y esperar a que 
-todas se hayan resuelto antes de continuar. El método 
-Promise.all() recibe un array de promesas y devuelve una 
-nueva promesa que se resuelve cuando todas las promesas 
-del array se han resuelto, o se rechaza si alguna de las 
-promesas se rechaza. Ejemplo:
+/* Método Promise.race(): Este método se utiliza para 
+ejecutar varias promesas en paralelo y esperar a que la 
+primera se haya resuelto o rechazado antes de continuar. 
+El método Promise.race() recibe un array de promesas y 
+devuelve una nueva promesa que se resuelve o se rechaza 
+tan pronto como la primera promesa del array se haya 
+resuelto o rechazado. Ejemplo:
 */
 
-const promesa1 = Promise.resolve('Primera promesa resuelta');
-const promesa2 = Promise.resolve('Segunda promesa resuelta');
-const promesa3 = Promise.reject('Tercera promesa rechazada');
 
-Promise.all([promesa1, promesa2, promesa3])
-  .then((resultados) => {
-    console.log(resultados); // Nunca se ejecuta debido a la promesa3 rechazada
+const promesa1 = new Promise((resolve) => setTimeout(resolve, 2000, 'Primera promesa resuelta'));
+const promesa2 = new Promise((resolve) => setTimeout(resolve, 1000, 'Segunda promesa resuelta'));
+const promesa3 = new Promise((reject) => setTimeout(reject, 500, 'Tercera promesa rechazada'));
+
+Promise.race([promesa1, promesa2, promesa3])
+  .then((resultado) => {
+    console.log(resultado); // 'Tercera promesa rechazada' (la primera en resolver)
   })
   .catch((error) => {
-    console.log(error); // 'Tercera promesa rechazada'
+    console.log(error); // Nunca se ejecuta debido a que la promesa1 y la promesa2 resuelven antes de la promesa3
   });
