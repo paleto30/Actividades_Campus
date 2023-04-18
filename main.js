@@ -33,28 +33,23 @@
   ejecutará si la operación falla. 
 */
 
-/* Método finally(): Este método se utiliza para 
-ejecutar un bloque de código después de que la promesa 
-se haya resuelto o rechazado, independientemente de si 
-ha habido un error o no. El método finally() se utiliza 
-típicamente para realizar limpieza o liberación de recursos 
-después de la finalización de una tarea. Ejemplo: 
+/* Método Promise.all(): Este método se utiliza para 
+ejecutar varias promesas en paralelo y esperar a que 
+todas se hayan resuelto antes de continuar. El método 
+Promise.all() recibe un array de promesas y devuelve una 
+nueva promesa que se resuelve cuando todas las promesas 
+del array se han resuelto, o se rechaza si alguna de las 
+promesas se rechaza. Ejemplo:
 */
 
-const miPromesa = new Promise((res, rej) => {
-  setTimeout(() => {
-    res('primer valor resuelto')
-  })
-})
+const promesa1 = Promise.resolve('Primera promesa resuelta');
+const promesa2 = Promise.resolve('Segunda promesa resuelta');
+const promesa3 = Promise.reject('Tercera promesa rechazada');
 
-miPromesa
-  .then((resultado) => {
-    console.log(resultado);
+Promise.all([promesa1, promesa2, promesa3])
+  .then((resultados) => {
+    console.log(resultados); // Nunca se ejecuta debido a la promesa3 rechazada
   })
   .catch((error) => {
-    console.log(error);
-  })
-  .finally(() => {
-    console.log('La promesa ha finalizado');
+    console.log(error); // 'Tercera promesa rechazada'
   });
-
