@@ -6,11 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="app.js" type="module" defer></script>
     <title>Web Components</title>
+
+
+    <style>
+        .contenedor{
+            display: flex;
+            gap: 18px;
+        }
+    </style>
+
 </head>
 <body>
 
     <my-header></my-header>
-    <my-section></my-section>
-    
+    <div class="contenedor">
+        <div>
+            <my-section></my-section>
+            <my-select></my-select> 
+        </div>
+        <my-nav></my-nav>
+    </div>
+    <my-footer></my-footer>
+
 </body>
 </html>
