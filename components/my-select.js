@@ -11,10 +11,25 @@ export default class mySelect  extends HTMLElement{
     constructor(){
         super();
         this.attachShadow({mode:"open"});
-        Promise.resolve(mySelect.components()).then(html =>{
+    }
+
+    handleEvent(e){
+        (e.type == 'click') ? this.enviarWorker(e) : undefined;
+    }
+
+    enviarWorker(e){
+        console.log("Me ha tocado el ombligo el",e.pointerType);
+        e.preventDefault();
+    }
+
+    connectedCallback(){
+        Promise.resolve(mySelect.components()).then( html =>{
             this.shadowRoot.innerHTML = html;
+            this.shadowRoot.querySelector(".btn").addEventListener("click",this.handleEvent.bind(this))
         })
     }
+
+
 }
 
 

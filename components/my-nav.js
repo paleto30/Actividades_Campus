@@ -11,10 +11,25 @@ export default class myNav extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode:"open"});
-        Promise.resolve(myNav.components()).then(html =>{
+    }
+
+    handleEvent(e){
+        (e.type == 'click') ? this.enviarWorker(e) : undefined;
+    }
+
+    enviarWorker(e){
+        console.log("Me ha tocado el brazo el",e.pointerType);
+        e.preventDefault();
+    }
+
+    connectedCallback(){
+        Promise.resolve(myNav.components()).then( html =>{
             this.shadowRoot.innerHTML = html;
+            this.Myform = this.shadowRoot.querySelector(".btn");
+            this.Myform.addEventListener("click",this.handleEvent.bind(this))
         })
     }
+
 }
 
 customElements.define(name, myNav);

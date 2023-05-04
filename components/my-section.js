@@ -12,6 +12,23 @@ export default class mySeccion extends HTMLElement{
             this.shadowRoot.innerHTML = html;
         })
     }
+
+    handleEvemt(e){
+        (e.type == 'click') ? this.enviarWorker(e) : undefined;
+    }
+
+    enviarWorker(e){
+        console.log("Me ha tocado la teta el",e.pointerType);
+        e.preventDefault();
+    }
+
+    connectedCallback(){
+        Promise.resolve(mySeccion.components()).then(html =>{
+            this.shadowRoot.innerHTML = html;
+            this.Myform = this.shadowRoot.querySelector(".btn");
+            this.Myform.addEventListener('click',this.handleEvemt.bind(this))
+        })
+    }
 }
 
 customElements.define(name, mySeccion);
